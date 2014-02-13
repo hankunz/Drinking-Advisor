@@ -1,0 +1,195 @@
+// date object inherits from Date constructor
+var date = new Date();
+
+var today = date.getDate();
+var rightNow = date.getTime();
+
+var Drink = {
+		alcohol: null,
+		calories: null,
+		sugar: null,
+		day: null,
+		time: null,
+		price: null
+};
+
+var Total = {
+		alcohol: 0,
+		calories: 0,
+		sugar: 0,
+		day: today,
+		time: rightNow,
+		price: 0
+};
+
+var week = [];
+var drinks = [];
+
+var drinkCount = 0;
+
+// a function to record what the user drinks.
+function takeDrink(alcohol, calories, sugar, day, time, price){
+	drinks.push(new Drink(alcohol, calories, sugar, day, time, price));
+	drinkCount++;
+	addtoDay(drinks[drinkCount-1]);
+}
+
+// a function to sum up the daily drinks. the justDrank variable is a Drink object.
+function addToDay(justDrank){
+	
+	Total.alcohol += justDrank.alcohol;
+	Total.calories += justDrank.calories;
+	Total.sugar += justDrank.sugar;
+	Total.price += justDrank.price;
+}
+
+// a function to find user's BMI.
+function findBMI(weight, height){
+	return (weight/(height * height));
+}
+
+// a function to find approximate blood alcohol level
+function approxAlcohol(sex, weight, height){
+	
+BAC += ((ethanol/(weight * constant1))*(constant2*hoursSince));
+//where the constants are determined by gender. 
+}
+
+
+
+
+function ApproxAlcohol(sex, weight, today)
+{
+  
+    var constant1;
+    var constant2;
+    var count=0;
+    var BAC=0;
+  
+	for(count;count<drinkCount;count++)
+	{
+		if(drinks[count].alcohol !== 0)
+		{
+			ethanol = drinks[count].alcohol;
+			hoursSince = date.getTime() - drinks[count].time;
+hoursSince = hoursSince/1000/60/60;  //milliseconds to hours
+				
+			if(sex == 'M')
+			{	
+				constant1 = 0.7;
+				constant2 = 0.1;
+			}
+			else
+			{	
+				constant1 = 0.6;
+				constant2 = 0.085;
+			}
+								
+			
+			BAC += ((ethanol/(weight * constant1))*(constant2*hoursSince));
+		
+		}		
+		
+		
+	}	
+	
+	
+	return BAC;
+	
+	//pure ethanol drink = (vol (ml)*alcohol*0.8)/100
+	//BAC  ethanol wgt/(person wgt * <.7forM   .6forW>)
+	//weight = weight* <.1forM  .085forW>
+}
+
+
+
+
+// a function to chart weekly alcohol consumption.
+function chartTheWeek(){}
+
+
+
+
+
+
+NEW CODE FOLLOWED!!!!!
+
+// date object inherits from Date constructor
+var date = new Date();
+
+var today = date.getDate();
+var rightNow = date.getTime();
+
+var Drink = {
+		alcohol: null,
+		calories: null,
+		sugar: null,
+		day: null,
+		time: null,
+		price: null
+};
+
+var Total = {
+		alcohol: 0,
+		calories: 0,
+		sugar: 0,
+		day: today,
+		time: rightNow,
+		price: 0
+};
+
+var week = [];
+var drinks = [];
+
+var drinkCount = 0;
+
+// a function to record what the user drinks.
+function takeDrink(){
+	drinks.push(new Drink);
+	drinkCount++;
+	addtoDay(drinks[drinkCount - 1]);
+}
+
+// a function to sum up the daily drinks.
+function addToDay(justDrank){	
+	Total.alcohol += justDrank.alcohol;
+	Total.calories += justDrank.calories;
+	Total.sugar += justDrank.sugar;
+	Total.price += justDrank.price;
+}
+
+// a function to find user's BMI.
+function findBMI(weight, height, unit){
+	if(unit === "KG"){
+		return (weight/(height * height));
+	}
+	else{
+		return (weight/(height * height) * 703);
+	}
+}
+
+// a function to find approximate blood alcohol level
+function approxAlcohol(sex, weight, height){
+	var constantM1 = 0.7;
+	var constantM2 = 0.3;
+	var constantF1 = 0.6;
+	var constantF2 = 0.085;
+	var BAC = 0;
+	
+	for(var count = 0; count < drinkCount; count++){
+		if(drinks[count].alcohol !== 0){
+			ethanol = drins[count].alcohol;
+			hourSince = (date.getTime() - drinks[count].time()) / 3600000;
+			
+			if(sex === "M"){
+				BAC += ((ethanol/(weight * constantM1))*(constantM2*hoursSince));
+			}
+			else{
+				BAC += ((ethanol/(weight * constantF1))*(constantF2*hoursSince));
+			}
+		}
+	}
+}
+
+// a function to chart weekly alcohol consumption.
+function chartTheWeek(){}
