@@ -1,0 +1,104 @@
+Iteration 1 Charter 
+
+
+
+Scope
+
+In Scope:
+		
+Creating a prototype to help group members understand the project nature
+Web site creation:
+Registration page with user input validation using JavaScript
+Profile view page
+Optimizing the website to be compatible with mobile devices
+Database:
+Creating the database design
+Creating the actual database (locally)
+Use of PHP to link the registration page to the database which lead to registering a new user and storing their information.
+Documenting the project:
+Created a Google Drive project to cooperate and share work done.
+Created iteration 1 plan
+Iteration 1 report
+Graph to keep track of achieving the group goals 
+Created Use-Cases with respective diagram
+Javascript:
+Creating a system to track and store each new drink
+Creating a system that tracks drinks over a day and week
+Creating a system that calculates the user’s BMI
+Creating a system that calculates the user’s blood-alcohol levels based on the drinks taken that day
+Creating a graph that displays the user’s alcohol consumption over a week
+
+Out of Scope:
+
+Implementing database and profile webpage connectivity to include:
+Allowing a registered user to login
+Collecting information from the database regarding a registered user after logging in and displaying their information
+Processing the acquired user’s information and display results such as:
+Calories per day to maintain current weight
+Exceeded limits alerts
+User habits (like drinking and exercising)
+Allowing users to modify existing personal information
+
+Additional features to add:
+Barcode detection to show the product details 
+User can review/rate drinks
+Send email notifications when exceeding certain limits.
+Track the user’s “favorite” drinks to allow quick additions
+Viewing a certain type of drink as a list
+Finding  good places that offer a selected drink
+Finding cheapest type of drink
+
+
+Critical Success Factors
+
+Dividing to sub groups to achieve more progress efficiently:
+Database team
+User interface team	
+User tracking and systems -JavaScript-  team
+
+Communication between team members:
+Face to face meetings
+Lab time meetings
+Stand up meetings after lecture time
+Scheduled meetings
+Online meetings
+Google hangouts
+Facebook group posts and chat
+
+The TA’s has helped steer our group in the right direction by answering questions to clarify ambiguity.
+The diversity of knowledge and skills among group members has helped achieve better results since each sub group had certain set of skills or expertise. 
+		
+	
+Assumptions
+
+The group members assumed that iteration 1 would take less work than expected
+The group members were expected to accomplish some additional tasks for this iteration where in reality some tasks needed to be moved to iteration 2
+        
+
+Constraints
+
+
+Constraint
+Effect
+Solution
+Time
+Reduce expected results and working hours
+Adding more hours to work on the project
+Skill
+Affects the quality of the final project
+Doing more research in areas where we lack expertise 
+Meeting Availability
+Affects communication between group members which could lead to some unfinished tasks or overlapped tasks
+Scheduling more meetings in advance
+
+Project Facilities and Resources
+
+Our team consists of six members with various skill levels in:
+Time management
+HTML
+CSS
+PHP
+JavaScript
+MySQL
+
+
