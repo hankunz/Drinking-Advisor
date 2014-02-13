@@ -1,0 +1,30 @@
+Task 	Date Complete			Interval Start	Interval End	Cumulative	Completed										
+Create a start page with fields and instructions about how to create the profile.	02/03/14			01/20/14	01/23/14	0	0										
+Gather user information on the website.	02/05/14			01/24/14	01/27/14	0	0										
+Create a user profile on the system database using the data gathered.	02/06/14			01/28/14	01/31/14	0	0										
+Notify the user that the profile has been created properly.				02/01/14	02/04/14	0	0										
+Enable the user to access the profile by logging in using information on the profile(email and password).				02/05/14	02/07/14	0	0										
+Enable the user to log off his/her profile on the system and returning to the first start page.				02/08/14	02/11/14	0	0										
+Create a page(or window) for adding a new drink that have a list of drinks and their information. 				02/11/14	02/13/14	0	0										
+Have the user be able to select a specific drink from the list. 																	
+The list can have text information on the common drinks 																	
+The recent used drinks can have icons to make it easier to choose																	
+The user can add a new type of drink to the database.																	
+Insert the user select drink into the user profile on the database.																	
+Inform the user that the drink has been successfully added.																	
+Ask the user if he/she wants to go add another drink or go back to the main page.																	
+Create a main page that displays user information and tracks what are the recent drinks that were drank. 																	
+Gather the drinks of the user profile from the system database.																	
+Display the drinks basic information(name, amounts) in a list form 																	
+Have the user select what information he/she wants to track from the data. 																	
+Display the drinks information on a graph.	02/03/14																
+Create the database for the data of the system.	02/06/14																
+Write the documents of the iteration.	02/13/14																
+Fill up the charts for the iteration. 	02/12/14																
+Build the acceptance tests for the code.																	
+																	
+																	
+																	
+																	
+																	
+																	
