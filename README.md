@@ -10,4 +10,7 @@ The code for the web app "Drinking Advisor" are divided into three parts now.
 
 - The third part JS code provides some useful functions in JavaScript to make the app functional. However, it's not integrated with the UI yet.
 
+- The fourth part Testing Codes provedes the some testing functions and testing cases for the registration page. Due to only registration page is fully functional right now, testing is only done for the registration page. After the other functions are added to the main UI, it will also be tested in the future. 
+
+
 Codes are written by different members from the group.
