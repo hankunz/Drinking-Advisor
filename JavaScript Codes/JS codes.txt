@@ -1,0 +1,212 @@
+Form for Name, age, weight, height, sex
+
+
+<form>
+Username: <input type="text" name="username" required>
+Name: <input type="text" name="name" required>
+Age: <input type="number" name="age" required>
+Weight: <input type="number" name="weight" required>
+Height: <input type="text" name="height" required>
+Sex (M or F): <input type="text" name="Sex" maxlength="1" required>
+<input type="submit">
+</form>
+
+
+
+ability to enter alcohol, calories, sugar intake and see weekly histories
+
+
+<form>
+How Much alcohol did I just drink?: <input type="number" name="alcohol" required>
+How many calories did I just drink?: <input type="number" name="calories" required>
+How much suga did I just drink?: <input type="number" name="suga" required>
+<input type="submit">
+</form>
+
+
+//The script looks at all of the values entered and adds them to the daily total
+//whilst saving the time for future reference
+
+
+
+
+
+<script>
+
+function Initialize()
+{
+var date=new Date();
+var today = date.getDay()
+var rightNow = date.getTime()
+
+var Drink = {
+		alcohol: null,
+		calories: null,
+		sugar: null,
+		day: null,
+		time: null,
+		price: null
+};
+
+var Total = {
+		alcohol: 0,
+		calories: 0,
+		sugar: 0,
+		day: today,
+		price: 0
+};
+
+
+var week = new Array(); 
+var drinks = new Array();
+var drinkCount = 0;
+}
+
+
+// a function to record what the user drinks.
+function takeDrink(alcohol, calories, sugar, day, time, price){
+	drinks.push(new Drink(alcohol, calories, sugar, day, time, price));
+	drinkCount++;
+	addtoDay(drinks[drinkCount-1]);
+}
+
+
+
+
+function addToWeek()
+{
+	//At the end of the day, add to the week
+	if(week.length()<=7)
+		week.push(total);
+	else
+	{	
+		week = [];
+		week.push(total);
+	}
+}
+
+
+function addToToday(justDrank)
+{
+	if (total.day==null)
+	{
+		total.day = justDrank.today;
+		total.alcohol = justDrank.alcohol;
+		total.calories = justDrank.calories;
+		total.sugar = justDrank.sugar;
+		total.price = justDrank.price;
+		
+	}
+	else
+	{
+		total.day += justDrank.today;
+		total.alcohol += justDrank.alcohol;
+		total.calories += justDrank.calories;
+		total.sugar += justDrank.sugar;
+		total.price += justDrank.price;
+		
+	}
+}
+
+
+
+function findBMI(weight, height)
+{
+	 var BMI = (weight / (height*height)) * 703;
+	 return BMI;
+}
+
+
+
+
+function ApproxAlcohol(sex, weight, today)
+{
+  
+    var constant1;
+    var constant2;
+    var count=0;
+    var BAC=0;
+  
+	for(count;count<drinkCount;count++)
+	{
+		if(drinks[count].alcohol !== 0)
+		{
+			ethanol = drinks[count].alcohol;
+			hoursSince = date.getTime() - drinks[count].time;
+			hoursSince = hoursSince/1000/60/60;  //milliseconds to hours
+				
+			if(sex == 'M')
+			{	
+				constant1 = 0.7;
+				constant2 = 0.1;
+			}
+			else
+			{	
+				constant1 = 0.6;
+				constant2 = 0.085;
+			}
+								
+			
+			BAC += ((ethanol/(weight * constant1))*(constant2*hoursSince));
+		
+		}		
+		
+		
+	}	
+	
+	
+	return BAC;
+	
+	//pure ethanol drink = (vol (ml)*alcohol*0.8)/100
+	//BAC  ethanol wgt/(person wgt * <.7forM   .6forW>)
+	//weight = weight* <.1forM  .085forW>
+}
+
+
+
+</script>
+
+
+<script scr="Chart.js">
+
+
+function chartTheWeek()
+{
+
+	var ctx = document.getElementById("myChart").getContext("2d");
+	var myNewChart = new Chart(ctx).PolarArea(data);
+
+	
+	var data = {
+	labels : ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+	datasets : [
+		{
+			//What your goals approximate
+			fillColor : "rgba(220,220,220,0.5)",
+			strokeColor : "rgba(220,220,220,1)",
+			pointColor : "rgba(220,220,220,1)",
+			pointStrokeColor : "#fff",
+			data : [65,59,90,81,56,55,40]
+		},
+		{
+			//What you did
+			fillColor : "rgba(151,187,205,0.5)",
+			strokeColor : "rgba(151,187,205,1)",
+			pointColor : "rgba(151,187,205,1)",
+			pointStrokeColor : "#fff",
+			data : [week[1].alcohol,week[2].alcohol,week[3].alcohol, week[4].alcohol,week[5].alcohol,week[6].alcohol,week[7].alcohol];
+		}
+	]
+}
+
+new Chart(ctx).Line(data,options);
+	
+}
+
+</script>
+
+
+
+track basic user goals ()
+
+Track cash money
