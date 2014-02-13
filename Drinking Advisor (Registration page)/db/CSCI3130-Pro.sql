@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 12, 2014 at 10:56 PM
+-- Generation Time: Feb 13, 2014 at 07:15 AM
 -- Server version: 5.5.33
 -- PHP Version: 5.5.3
 
@@ -61,13 +61,6 @@ CREATE TABLE `Login` (
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
---
--- Dumping data for table `Login`
---
-
-INSERT INTO `Login` (`Email`, `Password`, `Id`) VALUES
-('sahksjad.asdlk.com', '123', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -122,13 +115,6 @@ CREATE TABLE `Profile` (
   KEY `Id` (`Id`),
   KEY `Name` (`Name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `Profile`
---
-
-INSERT INTO `Profile` (`Id`, `Name`, `Age`, `Height`, `Weight`, `Gender`, `Country`) VALUES
-(1, 'sahl', 21, 22, 33, 'Male', 'saudi');
 
 --
 -- Constraints for dumped tables
