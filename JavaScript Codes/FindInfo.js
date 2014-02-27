@@ -1,12 +1,23 @@
-function findBMI(weight, height)
+function findBMI()
 {
-	 var BMI = (weight / (height*height)) * 703;
+	$user= mysqli_query($connect,"SELECT weight,height FROM Profile where id = 'name' ");
+
+	var user = <?php echo json_encode($user); ?>
+	 
+	 
+	 
+	 var BMI = (user.weight / (user.height*user.height)) * 703;
 	 return BMI;
 }
 
 
-function ApproxAlcohol(sex, weight, today)
+function ApproxAlcohol()
 {
+
+	$user= mysqli_query($connect,"SELECT weight,gender FROM Profile where id = 'name' ");
+
+	var user = <?php echo json_encode($user); ?>
+	
   
     var constant1;
     var constant2;
@@ -21,7 +32,7 @@ function ApproxAlcohol(sex, weight, today)
 			hoursSince = date.getTime() - drinks[count].time;
 			hoursSince = hoursSince/1000/60/60;  //milliseconds to hours
 				
-			if(sex == 'M')
+			if(user.gendre == 'M')
 			{	
 				constant1 = 0.7;
 				constant2 = 0.1;
@@ -33,7 +44,7 @@ function ApproxAlcohol(sex, weight, today)
 			}
 								
 			
-			BAC += ((ethanol/(weight * constant1))*(constant2*hoursSince));
+			BAC += ((ethanol/(user.weight * constant1))*(constant2*hoursSince));
 		
 		}		
 		

@@ -16,6 +16,8 @@ function addToToday(justDrank)
 {
 	if (total.day==null)
 	{
+		
+		total.drinks.push(justDrank);
 		total.day = justDrank.today;
 		total.alcohol = justDrank.alcohol;
 		total.calories = justDrank.calories;
