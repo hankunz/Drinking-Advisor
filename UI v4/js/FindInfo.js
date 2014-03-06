@@ -1,4 +1,4 @@
-function findBMI(name)
+function findBMI()
 {
 	//Connecting to the database
 	$connect=mysqli_connect("db.cs.dal.ca","brisson","B00558916","brisson");
@@ -6,16 +6,16 @@ function findBMI(name)
 	if(mysqli_connect_errno($connect))
 	{
 		echo "Failed to connect to MySQL database, sorry bro.";
-	}							
+	}			
 	
-	$user= mysqli_query($connect,"SELECT weight,height FROM Profile where id = 'name' ");
+	//$user= mysqli_query($connect,"SELECT weight,height FROM Profile where id = 'name' ");
 
-	var user = <?php echo json_encode($user); ?>
+	//var user = <?php echo json_encode($user); ?>
 	 
 	 
 	 
-	 var BMI = (user.weight / (user.height*user.height)) * 703;
-	 return BMI;
+	 //var BMI = (user.weight / (user.height*user.height)) * 703;
+	 return 90;
 }
 
 

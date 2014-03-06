@@ -16,6 +16,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script type="text/javascript" src=" js/Chart.js"></script>
  <script type="text/javascript" src=" js/jquery.easing.js"></script>
  <script type="text/javascript" src=" js/jquery.ulslide.js"></script>
+ <script type="text/javascript" src=" js/FindInfo.js"></script>
  <!----Calender -------->
   <link rel="stylesheet" href=" css/clndr.css" type="text/css" />
   <script src=" js/underscore-min.js"></script>
@@ -86,7 +87,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<li><a href="#"><span class="day_name">Height: </span>
 						  			<label class="digits">180<i></i></label><div class="clear"></div></a></li>
 									<li><a href="#"><span class="day_name">BMI:</span>
-						  			<label class="digits">100<i></i></label><div class="clear"></div></a></li>
+						  			<label class="digits">
+									<script>document.write(findBMI())</script>
+									<i></i></label><div class="clear"></div></a></li>
 				    		</ul>
 				      </div>
 		          </div>	           
