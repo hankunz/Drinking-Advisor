@@ -10,9 +10,7 @@
 //Define the global Chart Variable as a class.
 window.Chart = function(context){
 
-	var chart = this;
-	
-	
+	var chart = this;	
 	//Easing functions adapted from Robert Penner's easing equations
 	//http://www.robertpenner.com/easing/
 	
@@ -160,114 +158,13 @@ window.Chart = function(context){
 		context.canvas.width = width * window.devicePixelRatio;
 		context.scale(window.devicePixelRatio, window.devicePixelRatio);
 	}
-
-	this.PolarArea = function(data,options){
-	
-		chart.PolarArea.defaults = {
-			scaleOverlay : true,
-			scaleOverride : false,
-			scaleSteps : null,
-			scaleStepWidth : null,
-			scaleStartValue : null,
-			scaleShowLine : true,
-			scaleLineColor : "rgba(0,0,0,.1)",
-			scaleLineWidth : 1,
-			scaleShowLabels : true,
-			scaleLabel : "<%=value%>",
-			scaleFontFamily : "'Arial'",
-			scaleFontSize : 12,
-			scaleFontStyle : "normal",
-			scaleFontColor : "#666",
-			scaleShowLabelBackdrop : true,
-			scaleBackdropColor : "rgba(255,255,255,0.75)",
-			scaleBackdropPaddingY : 2,
-			scaleBackdropPaddingX : 2,
-			segmentShowStroke : true,
-			segmentStrokeColor : "#fff",
-			segmentStrokeWidth : 2,
-			animation : true,
-			animationSteps : 100,
-			animationEasing : "easeOutBounce",
-			animateRotate : true,
-			animateScale : false,
-			onAnimationComplete : null
-		};
-		
-		var config = (options)? mergeChartConfig(chart.PolarArea.defaults,options) : chart.PolarArea.defaults;
-		
-		return new PolarArea(data,config,context);
-	};
-
-	this.Radar = function(data,options){
-	
-		chart.Radar.defaults = {
-			scaleOverlay : false,
-			scaleOverride : false,
-			scaleSteps : null,
-			scaleStepWidth : null,
-			scaleStartValue : null,
-			scaleShowLine : true,
-			scaleLineColor : "rgba(0,0,0,.1)",
-			scaleLineWidth : 1,
-			scaleShowLabels : false,
-			scaleLabel : "<%=value%>",
-			scaleFontFamily : "'Arial'",
-			scaleFontSize : 12,
-			scaleFontStyle : "normal",
-			scaleFontColor : "#666",
-			scaleShowLabelBackdrop : true,
-			scaleBackdropColor : "rgba(255,255,255,0.75)",
-			scaleBackdropPaddingY : 2,
-			scaleBackdropPaddingX : 2,
-			angleShowLineOut : true,
-			angleLineColor : "rgba(0,0,0,.1)",
-			angleLineWidth : 1,			
-			pointLabelFontFamily : "'Arial'",
-			pointLabelFontStyle : "normal",
-			pointLabelFontSize : 12,
-			pointLabelFontColor : "#666",
-			pointDot : true,
-			pointDotRadius : 3,
-			pointDotStrokeWidth : 1,
-			datasetStroke : true,
-			datasetStrokeWidth : 2,
-			datasetFill : true,
-			animation : true,
-			animationSteps : 60,
-			animationEasing : "easeOutQuart",
-			onAnimationComplete : null
-		};
-		
-		var config = (options)? mergeChartConfig(chart.Radar.defaults,options) : chart.Radar.defaults;
-
-		return new Radar(data,config,context);
-	};
-	
-	this.Pie = function(data,options){
-		chart.Pie.defaults = {
-			segmentShowStroke : true,
-			segmentStrokeColor : "#fff",
-			segmentStrokeWidth : 2,
-			animation : true,
-			animationSteps : 100,
-			animationEasing : "easeOutBounce",
-			animateRotate : true,
-			animateScale : false,
-			onAnimationComplete : null
-		};		
-
-		var config = (options)? mergeChartConfig(chart.Pie.defaults,options) : chart.Pie.defaults;
-		
-		return new Pie(data,config,context);				
-	};
-	
 	this.Doughnut = function(data,options){
 	
 		chart.Doughnut.defaults = {
 			segmentShowStroke : true,
-			segmentStrokeColor : "#fff",
-			segmentStrokeWidth : 2,
-			percentageInnerCutout : 50,
+			segmentStrokeColor :"rgba(255, 255, 255, 0)",
+			segmentStrokeWidth : 0,
+			percentageInnerCutout :60,
 			animation : true,
 			animationSteps : 100,
 			animationEasing : "easeOutBounce",
@@ -290,16 +187,16 @@ window.Chart = function(context){
 			scaleSteps : null,
 			scaleStepWidth : null,
 			scaleStartValue : null,
-			scaleLineColor : "rgba(0,0,0,.1)",
+			scaleLineColor : "rgba(255, 255, 255, 0)",
 			scaleLineWidth : 1,
 			scaleShowLabels : true,
 			scaleLabel : "<%=value%>",
 			scaleFontFamily : "'Arial'",
 			scaleFontSize : 12,
 			scaleFontStyle : "normal",
-			scaleFontColor : "#666",
+			scaleFontColor : "#FFF",
 			scaleShowGridLines : true,
-			scaleGridLineColor : "rgba(0,0,0,.05)",
+			scaleGridLineColor : "#009699",
 			scaleGridLineWidth : 1,
 			bezierCurve : true,
 			pointDot : true,
@@ -317,39 +214,6 @@ window.Chart = function(context){
 		
 		return new Line(data,config,context);
 	}
-	
-	this.Bar = function(data,options){
-		chart.Bar.defaults = {
-			scaleOverlay : false,
-			scaleOverride : false,
-			scaleSteps : null,
-			scaleStepWidth : null,
-			scaleStartValue : null,
-			scaleLineColor : "rgba(0,0,0,.1)",
-			scaleLineWidth : 1,
-			scaleShowLabels : true,
-			scaleLabel : "<%=value%>",
-			scaleFontFamily : "'Arial'",
-			scaleFontSize : 12,
-			scaleFontStyle : "normal",
-			scaleFontColor : "#666",
-			scaleShowGridLines : true,
-			scaleGridLineColor : "rgba(0,0,0,.05)",
-			scaleGridLineWidth : 1,
-			barShowStroke : true,
-			barStrokeWidth : 2,
-			barValueSpacing : 5,
-			barDatasetSpacing : 1,
-			animation : true,
-			animationSteps : 60,
-			animationEasing : "easeOutQuart",
-			onAnimationComplete : null
-		};		
-		var config = (options) ? mergeChartConfig(chart.Bar.defaults,options) : chart.Bar.defaults;
-		
-		return new Bar(data,config,context);		
-	}
-	
 	var clear = function(c){
 		c.clearRect(0, 0, width, height);
 	};
