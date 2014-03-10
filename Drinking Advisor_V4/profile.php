@@ -102,7 +102,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				                </div>
 				            </div>
 				             <div class="profile_img">	
-				             	<a href=""><img src=" images/profile_img40x40.jpg" alt="" />	</a>
+				             <img src=" images/logo.jpg"  alt="logo" class="logoPic" />
 				             </div>		
 				             <div class="clear"></div>		  	
 					    </div>	
