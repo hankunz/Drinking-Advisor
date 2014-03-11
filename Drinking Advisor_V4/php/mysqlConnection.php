@@ -1,8 +1,8 @@
 		<?php
-		$username="ghamdi";
-		$password="B00537188";
-		$dbname="ghamdi";
-		$host="db.cs.dal.ca";
+		$username="admin";
+		$password="admin";
+		$dbname="CSCI3130-Pro";
+		$host="localhost";
 		
 		$con=mysqli_connect($host,$username,$password,$dbname);
 		
