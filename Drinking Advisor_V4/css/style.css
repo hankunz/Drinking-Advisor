@@ -43,6 +43,7 @@ body{
 	
 }
 .header_top{
+	height:75px;
 	background:#394264;
 	border-radius:5px;
 	-webkit-border-radius:5px;
@@ -64,6 +65,8 @@ body{
 }
 /* Login Button */
 #loginButton { 
+	margin-right:-15px;
+	margin-top:5px;
     display:inline-block;  
     position:relative;
     z-index:30;
@@ -1023,4 +1026,11 @@ fieldset#body {
 .copy-right p a:hover{
 	color:#FFF;
 	text-decoration:underline;
+}
+
+.logoPic{
+margin-top:10px;
+padding-left:-20px;
+width:40px; 
+height:40px;
 }
