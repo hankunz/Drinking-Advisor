@@ -16,19 +16,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
   		$weight = preventScript($_POST["weight"]);
   		
   		// calculating Bmi and storing it in a variable
-  		$Bmi= number_format(($weight)/(($height/100)*($height/100)), 1);
-  		
+  		$Bmi= round(($weight / pow($height/100, 2)),1);
   		
   		// insert email and password
-  		$insertEmailAndPassword ="INSERT INTO Login (Email, Password, Id) VALUES ('$email', '$password', 'Null');";
+  		$insertEmailAndPassword ="INSERT INTO `Login` (`Email`, `Password`, `Id`) VALUES ('$email', '$password', Null);";
   		// retrieve id query
-  		$retrieveId ="SELECT Id FROM Login WHERE Email='$email';";
+  		$retrieveId ="SELECT `Id` FROM `Login` WHERE Email='$email';";
   		
   		// initializing database connection
   			require 'php/mysqlConnection.php';	
   													
   		// query to get count of usernames existing in database that matches the entered email
-  		$getCountQuery ="SELECT COUNT(*) FROM Login WHERE Email = '$email';";
+  		$getCountQuery ="SELECT COUNT(*) FROM `Login` WHERE Email = '$email';";
 						
 		// run previous count query
   		$getCountQueryResult=mysqli_query($con,$getCountQuery);
@@ -67,12 +66,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
    		 $idVal=$row['Id'];   		 
    		 }
   		
-  		
-  		
+  	
+  						
   		// insert profile info query
-  		$insertProfileInfo ="INSERT INTO Profile (Id, Name, Age, Height, Weight, Gender, Country, Bmi) VALUES ('$idVal', '$fullName', '$age', '$height', '$weight', '$gender', '$country', '$Bmi');";
+  		$insertProfileInfo ="INSERT INTO `Profile` (`Id`, `Name`, `Age`, `Height`, `Weight`, `Gender`, `Country`, `Bmi`) VALUES ('$idVal', '$fullName', '$age', '$height', '$weight', '$gender', '$country', '$Bmi');";
+  		  
   		// run profile entry query
-  		mysqli_query($con,$insertProfileInfo);
+  		mysqli_query($con,$insertProfileInfo)or die(mysql_error().'DID NOT ADD');
   		
   		
 
