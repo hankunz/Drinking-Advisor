@@ -2,12 +2,7 @@
  // start up your PHP session!
  session_start();
   ?>
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+
 <!DOCTYPE HTML>
 <head>
 <title>Drinking Advisor</title>
@@ -50,64 +45,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 <?php require 'php/dataRetrieval.php'; ?>
-	
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       
 	    <div class="wrap">	 
 	      <div class="header">
 	      	  <div class="header_top">
@@ -137,65 +75,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							        			</ul>
 							        		</div>			                            
 				                        </fieldset>
-				                    </form>
-				                  
-				                  
-				                  
-				                  
-				                  
-				                  
-				                  
-				                  
-				                  
-				                  
-				                  
-				                  
-				                  
-				                  
-				                  
-				                  
-				                  
-				                  
-				                  
-				                  
-				                  
-				                  
-				                  
-				                  
-				                  
-				                  
-				                  
-				                   
-				                    
-				                 
-				                 
-				                 
-				                 
-				                 
-				                 
-				                 
-				                 
-				                 
-				                 
-				                 
-				                 
-				                 
-				                 
-				                 
-				                 
-				                 
-				                 
-				                 
-				                 
-				                 
-				                 
-				                 
-				                 
-				                 
-				                    
-				                    
-				                    
-				                    
+				                    </form>				                  
+				                
 				                </div>
 				            </div>
 				             <div class="profile_img">	
@@ -213,91 +94,65 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	    <div class="wrap">  		 
 	
 
-	    		 <div class="chart">
+						    		 <div class="chart">
 		               <h3>Drinking Status</h3>
 		                  <div class="diagram">
-		                  <canvas id="canvas" height="200" width="200"> </canvas>
-		                 
-		                 </div>				
-						<div class="chart_list">
-			           	  <ul>
-			           	  	<li><a href="#" class="red">Alcohol<p class="percentage">21<em>%</em></p></a></li>
-			           	  	<li><a href="#" class="purple">Calories<p class="percentage">48<em>%</em></p></a></li>
-			           	  	<li><a href="#" class="yellow">Vitamin C<p class="percentage">9<em>%</em></p></a></li>
-			           	  	<li><a href="#" class="blue">Sugar<p class="percentage">32<em>%</em></p></a></li>
-			           	  	<div class="clear"></div>	
-			           	  </ul>
-			           </div>
-			           <script>
-						var doughnutData = [
-								{
-									value: 21,
-									color:"#E64C65"
-								},
-								{
-									value : 48,
-									color : "#11A8AB"
-								},							
-								{
-									value : 32,
-									color : "#4FC4F6"
-								},	
-								{
-									value : 9,
-									color : "#FCB150"
-								},							
-							
-							];				
-							var myDoughnut = new Chart(document.getElementById("canvas").getContext("2d")).Doughnut(doughnutData);					
-					</script>
-					
-					
+		                  <canvas id="canvas" height="300" width="450"></canvas>
+
+
+	<script>
+
+		var lineChartData = {
+			labels : ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+			datasets : [
+				{
+					fillColor : "rgba(91,95,214,0.5)",
+					strokeColor : "rgba(220,220,220,1)",
+					pointColor : "rgba(220,220,220,1)",
+					pointStrokeColor : "#fff",
+					data : [65,59,90,81,56,55,70]
+				},
+				{
+					fillColor : "rgba(8,163,0,0.5)",
+					strokeColor : "rgba(151,187,205,1)",
+					pointColor : "rgba(151,187,205,1)",
+					pointStrokeColor : "#fff",
+					data : [28,38,48,70,28,08,2]
+				}
+			]
+			
+		}
+
+	var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Line(lineChartData);
+	
+	</script>
+		          </div>
+
+
+</div>
 					
 			
 		          </div>
 
 
-</div>
+
 				  	<div class="addDrink">
 					    <form>
 					 		<input class="iterateEffects" type="button" value="Drink!" >
 					 	</form>
 				   </div>
-</div>
+				   	   </div>
+				   
 
-	<div class="pt-page pt-page-2">   
+
+<div class="pt-page pt-page-2">   
  <div class="wrap">  		 
 	       <div class="column_left">	
 
 				 <div class="column_right_grid sign-in">
 				 	<div class="sign_in">
 				       <h3>What did you just drink?</h3>
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
-					   
+				
 					    <form>
 					    	<span>
 					 	    <i><img src=" images/likes.png" alt="" /></i><input type="text" value="Enter the name of the drink" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter the name of the drink';}">
@@ -319,47 +174,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	 				  	<div class="addDrink">
 					  <!--  <form> -->
 					 		<input class="iterateEffects" type="button" value="Add!" >
-					 	</form>
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
-					 	
+					 	</form>					 	
+	
 				   </div>
 				   
    </div>   
