@@ -109,7 +109,7 @@ $getDrinkDateAddedQueryResult=mysqli_query($con,$getDrinkDateAddedQuery);
    		 	 }
    		 	 while($row = mysqli_fetch_array($getDrinkDateAddedQueryResult))
    			 {
-   				$getDrinkDateAddedQueryResultVal=$row['Vitaminc'];   		 
+   				$getDrinkDateAddedQueryResultVal=$row['DateAdded'];   		 
    		 	 }
    		 	 
 // exporting the values as js objects and place them inside the already defined array
