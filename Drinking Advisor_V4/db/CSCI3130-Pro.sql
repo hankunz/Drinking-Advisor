@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 10, 2014 at 05:23 AM
+-- Generation Time: Mar 13, 2014 at 04:26 PM
 -- Server version: 5.5.33
 -- PHP Version: 5.5.3
 
@@ -27,16 +27,56 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `Drink` (
-  `Name` varchar(100) NOT NULL,
-  `Label` varchar(100) NOT NULL,
-  `Size` varchar(150) NOT NULL,
-  `Price` int(2) NOT NULL,
-  `Review` varchar(200) NOT NULL,
+  `DrinkId` int(50) NOT NULL AUTO_INCREMENT,
   `Id` int(50) NOT NULL,
-  PRIMARY KEY (`Name`,`Label`),
-  KEY `Label` (`Label`),
+  `DateAdded` varchar(30) NOT NULL,
+  `TimeAdded` varchar(30) NOT NULL,
+  PRIMARY KEY (`DrinkId`),
   KEY `Id` (`Id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `Drink`
+--
+
+INSERT INTO `Drink` (`DrinkId`, `Id`, `DateAdded`, `TimeAdded`) VALUES
+(4, 7, '2014-03-13', '12:51:36 am'),
+(5, 7, '2014-03-13', '1:29:41 am'),
+(6, 7, '2014-03-13', '1:32:07 am');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `DrinkInfo`
+--
+
+CREATE TABLE `DrinkInfo` (
+  `DrinkId` int(11) DEFAULT NULL COMMENT 'foreign key from Drink',
+  `Name` varchar(50) NOT NULL,
+  `Label` varchar(50) DEFAULT NULL,
+  `Volume` double NOT NULL,
+  `Price` double DEFAULT NULL,
+  `Review` varchar(200) DEFAULT NULL,
+  `Sugar` int(5) NOT NULL,
+  `Protein` int(2) DEFAULT NULL,
+  `Fat` int(2) DEFAULT NULL,
+  `Calories` int(5) NOT NULL,
+  `Cholesterol` int(2) DEFAULT NULL,
+  `Sodium` int(2) DEFAULT NULL,
+  `Alcohol` int(5) NOT NULL,
+  `Vitaminc` int(5) NOT NULL,
+  UNIQUE KEY `DrinkId_2` (`DrinkId`),
+  KEY `DrinkId` (`DrinkId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `DrinkInfo`
+--
+
+INSERT INTO `DrinkInfo` (`DrinkId`, `Name`, `Label`, `Volume`, `Price`, `Review`, `Sugar`, `Protein`, `Fat`, `Calories`, `Cholesterol`, `Sodium`, `Alcohol`, `Vitaminc`) VALUES
+(4, 'dew', NULL, 350, NULL, NULL, 40, NULL, NULL, 100, NULL, NULL, 0, 0),
+(5, 'Tea', NULL, 200, NULL, NULL, 15, NULL, NULL, 60, NULL, NULL, 0, 0),
+(6, 'Apple juice', NULL, 215, NULL, NULL, 5, NULL, NULL, 30, NULL, NULL, 0, 7);
 
 -- --------------------------------------------------------
 
@@ -74,37 +114,15 @@ INSERT INTO `Login` (`Email`, `Password`, `Id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `NutritionFact`
---
-
-CREATE TABLE `NutritionFact` (
-  `Sugar` int(2) NOT NULL,
-  `Protein` int(2) NOT NULL,
-  `Fat` int(2) NOT NULL,
-  `Calories` int(2) NOT NULL,
-  `Cholesterol` int(2) NOT NULL,
-  `Sodium` int(2) NOT NULL,
-  `Name` varchar(100) NOT NULL,
-  `Label` varchar(100) NOT NULL,
-  KEY `Name` (`Name`),
-  KEY `Label` (`Label`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `Place`
 --
 
 CREATE TABLE `Place` (
-  `Name` varchar(100) NOT NULL,
-  `Label` varchar(100) NOT NULL,
-  `pName` varchar(70) NOT NULL,
+  `DrinkId` int(50) NOT NULL,
+  `PlaceName` varchar(70) NOT NULL,
   `Address` varchar(50) NOT NULL,
   PRIMARY KEY (`Address`),
-  KEY `Name` (`Name`),
-  KEY `Label` (`Label`),
-  KEY `Label_2` (`Label`)
+  KEY `DrinkId` (`DrinkId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -145,18 +163,16 @@ ALTER TABLE `Drink`
   ADD CONSTRAINT `drink_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `Login` (`Id`);
 
 --
--- Constraints for table `NutritionFact`
+-- Constraints for table `DrinkInfo`
 --
-ALTER TABLE `NutritionFact`
-  ADD CONSTRAINT `nutritionfact_ibfk_1` FOREIGN KEY (`Name`) REFERENCES `Drink` (`Name`),
-  ADD CONSTRAINT `nutritionfact_ibfk_2` FOREIGN KEY (`Label`) REFERENCES `Drink` (`Label`);
+ALTER TABLE `DrinkInfo`
+  ADD CONSTRAINT `drinkinfo_ibfk_1` FOREIGN KEY (`DrinkId`) REFERENCES `Drink` (`DrinkId`);
 
 --
 -- Constraints for table `Place`
 --
 ALTER TABLE `Place`
-  ADD CONSTRAINT `place_ibfk_1` FOREIGN KEY (`Name`) REFERENCES `Drink` (`Name`),
-  ADD CONSTRAINT `place_ibfk_2` FOREIGN KEY (`Label`) REFERENCES `Drink` (`Label`);
+  ADD CONSTRAINT `place_ibfk_1` FOREIGN KEY (`DrinkId`) REFERENCES `Drink` (`DrinkId`);
 
 --
 -- Constraints for table `Profile`
