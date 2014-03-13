@@ -3,12 +3,7 @@
  session_start();
   ?>
 
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+<!-- This page creates a profile page to show the users' information and some healthy status calculated from the info.-->
 <!DOCTYPE HTML>
 <head>
 <title>Drinking Advisor - Profile</title>
@@ -21,13 +16,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script type="text/javascript" src=" js/Chart.js"></script>
  <script type="text/javascript" src=" js/jquery.easing.js"></script>
  <script type="text/javascript" src=" js/jquery.ulslide.js"></script>
- <!----Calender -------->
-  <link rel="stylesheet" href=" css/clndr.css" type="text/css" />
-  <script src=" js/underscore-min.js"></script>
-  <script src= " js/moment-2.2.1.js"></script>
-  <script src=" js/clndr.js"></script>
-  <script src=" js/site.js"></script>
-  <!----End Calender -------->
   <link type="text/css" href=" css/mmenu.css" rel="stylesheet" media="all" />
 <script type="text/javascript" src=" js/jquery.mmenu.min.js"></script>
 <script type="text/javascript">
@@ -38,36 +26,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 <body>	
 
-
-
-
-
-
-
-
-
-
-
-
-
 <?php require 'php/dataRetrieval.php'; ?>		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       
+   
 	    <div class="wrap">	 
 	      <div class="header">
 	      	  <div class="header_top">
@@ -77,10 +37,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				                  <a id="loginButton" class=""><span>Me</span></a>   
 				                    <div id="loginBox"> 
 				                    
-				                    
-				                    
-				                    
-				                                   
+									<!-- show user info. -->      
 				                      <form id="loginForm" name="loginForm" >
 				                        <fieldset id="body">
 				                            <div class="user-info">
@@ -113,7 +70,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	  <div class="main">  
 	    <div class="wrap">  		 
 	  
-	  		
+	  		<!-- show user profile -->
             <div class="column_middle">
 
 		         <div class="weather">
@@ -146,6 +103,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     	<div class="clear"></div>
  	 </div>
    </div>   
+   <!-- The side navigation bar-->
    					<nav id="menu">
 							<ul>
 								<li><a href="main.php"><i><img src=" images/invites.png"></i>Home</a></li>

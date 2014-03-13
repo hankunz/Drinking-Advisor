@@ -1,6 +1,10 @@
 <?php ob_start(); 
  ?>
-<!-- V2 -->
+ 
+ 
+<!-- This page provides a interface for user registration. Users can register themselves with their personal information.
+ All information is stored into a database and used for login and further calculation.-->
+ 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
     <head>
         <title>Drinking Advisor - Registration Page</title>
@@ -8,7 +12,6 @@
         <meta name="description" content="Registration Page" />
         <link rel="stylesheet" href="css/registrationPage.css" type="text/css" media="screen"/>
 		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
-        
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
         <script type="text/javascript" src="sliding.form.js"></script>
     </head>
@@ -23,74 +26,16 @@
 		?>            
                     
 
-
-
-
-
+<!-- The main tag which creates the UI window-->
 	  <div class="main">  
 	    <div class="wrap">  		 
-	  
-	  		
-            <div class="column_middle">
-
-		       
+            <div class="column_middle">		       
 		               <h3 id="title">Drinking Advisor</h3>
-
-						
+		
    <div id="content">
        
             <div id="wrapper">
                 <div id="steps">
-  
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                        <form id="formElem" name="formElem" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                         <fieldset class="step">
                             <legend>Intro</legend>
@@ -99,6 +44,8 @@
                              
                             </p>
                         </fieldset>
+						
+						<!-- The page that asks for personal details -->
                         <fieldset class="step">
                             <legend>Personal Details</legend>
                             <p>
@@ -124,6 +71,8 @@
                             </p>
 
                         </fieldset>
+						
+						<!-- The page that asks for Body details -->
                         <fieldset class="step">
                             <legend>Body Details</legend>
 							 <p>
@@ -151,6 +100,7 @@
 
                         </fieldset>
 
+						<!-- The page that cofirms the registration -->
 						<fieldset class="step">
                             <legend>Confirm</legend>
 							<p>
@@ -165,85 +115,10 @@
                                 <button id="registerButton" type="submit">Start</button>
                             </p>
                         </fieldset>
-                    </form>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-
-                    
-                    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-                    
-                    
+                    </form>  
                 </div>
+				
+				<!-- The navigation at the buttom-->
                 <div id="navigation" style="display:none;">
                     <ul>
                         <li class="selected">

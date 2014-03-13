@@ -2,7 +2,8 @@
  // start up your PHP session!
  session_start();
   ?>
-
+	<!-- This page is the main UI of the application. It provides a side navigation bar to switch from different pages and also a main page to keep track of 
+	users' daily drinking status.	-->
 <!DOCTYPE HTML>
 <head>
 <title>Drinking Advisor</title>
@@ -25,13 +26,6 @@
 <script type="text/javascript" src=" js/Chart.js"></script>
  <script type="text/javascript" src=" js/jquery.easing.js"></script>
  <script type="text/javascript" src=" js/jquery.ulslide.js"></script>
- <!----Calender -------->
-  <link rel="stylesheet" href=" css/clndr.css" type="text/css" />
-  <script src=" js/underscore-min.js"></script>
-  <script src= " js/moment-2.2.1.js"></script>
-  <script src=" js/clndr.js"></script>
-  <script src=" js/site.js"></script>
-  <!----End Calender -------->
   <link type="text/css" href=" css/mmenu.css" rel="stylesheet" media="all" />
 <script type="text/javascript" src=" js/jquery.mmenu.min.js"></script>
 <script type="text/javascript">
@@ -46,6 +40,7 @@
 
 <?php require 'php/dataRetrieval.php'; ?>
 
+	<!-- main tag for the UI -->
 	    <div class="wrap">	 
 	      <div class="header">
 	      	  <div class="header_top">
@@ -54,11 +49,10 @@
 				    		   <div id="loginContainer">
 				                  <a id="loginButton" class=""><span>Me</span></a>   
 				                    <div id="loginBox">                
-				                     
-				                     
-				                     
+
 				                     <form id="loginForm" name="loginForm" >
 				                      
+									  	<!-- show user info. -->
 				                        <fieldset id="body">
 				                            <div class="user-info">
 							        			<h4>Hello,<a href="#"> <?php if(isset($_SESSION['userId'])){echo $getNameQueryResultVal;}else{echo 'Username';}  ?></a></h4>
@@ -88,54 +82,56 @@
 				   </div>
 			</div>	  					     
 	   </div>	  			
-<div id="pt-main" class="pt-perspective">	
-<div class="pt-page pt-page-1">   
+	<!-- The window that use a line chart to keep track of users daily drinking status -->
+	<div id="pt-main" class="pt-perspective">	
+	<div class="pt-page pt-page-1">   
 	
 	    <div class="wrap">  		 
 	
 
-						    		 <div class="chart">
+		<!--line chart implementation -->
+		<div class="chart">
 		               <h3>Drinking Status</h3>
 		                  <div class="diagram">
 		                  <canvas id="canvas" height="300" width="450"></canvas>
 
 
-	<script>
+					<script>
 
-		var lineChartData = {
-			labels : ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-			datasets : [
-				{
-					fillColor : "rgba(91,95,214,0.5)",
-					strokeColor : "rgba(220,220,220,1)",
-					pointColor : "rgba(220,220,220,1)",
-					pointStrokeColor : "#fff",
-					data : [65,59,90,81,56,55,70]
-				},
-				{
-					fillColor : "rgba(8,163,0,0.5)",
-					strokeColor : "rgba(151,187,205,1)",
-					pointColor : "rgba(151,187,205,1)",
-					pointStrokeColor : "#fff",
-					data : [28,38,48,70,28,08,2]
-				}
-			]
-			
-		}
+						var lineChartData = {
+							labels : ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+							datasets : [
+								{
+									fillColor : "rgba(91,95,214,0.5)",
+									strokeColor : "rgba(220,220,220,1)",
+									pointColor : "rgba(220,220,220,1)",
+									pointStrokeColor : "#fff",
+									data : [65,59,90,81,56,55,70]
+								},
+								{
+									fillColor : "rgba(8,163,0,0.5)",
+									strokeColor : "rgba(151,187,205,1)",
+									pointColor : "rgba(151,187,205,1)",
+									pointStrokeColor : "#fff",
+									data : [28,38,48,70,28,08,2]
+								}
+							]
+							
+						}
 
-	var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Line(lineChartData);
-	
-	</script>
+						var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Line(lineChartData);
+					
+					</script>
 		          </div>
 
 
-</div>
+	</div>
 					
 			
 		          </div>
 
 
-
+		<!-- button to add a drink-->
 				  	<div class="addDrink">
 					    <form>
 					 		<input class="iterateEffects" type="button" value="Drink!" >
@@ -144,9 +140,9 @@
 				   	   </div>
 				   
 
-
-<div class="pt-page pt-page-2">   
- <div class="wrap">  		 
+	<!-- The page for adding a drink-->
+	<div class="pt-page pt-page-2">   
+	 <div class="wrap">  		 
 	       <div class="column_left">	
 
 				 <div class="column_right_grid sign-in">
@@ -186,7 +182,7 @@
 
 
 
-
+		<!-- The side navigation bar-->
    					<nav id="menu">
 							<ul>
 								<li><a href="main.php"><i><img src=" images/invites.png"></i>Home</a></li>
