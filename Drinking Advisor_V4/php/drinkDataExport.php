@@ -68,6 +68,9 @@ $getDrinkAlcoholQuery ="SELECT Alcohol FROM DrinkInfo WHERE DrinkId='$drinkIds[$
 // query to retrieve the drink vitamin c
 $getDrinkVitamincQuery ="SELECT Vitaminc FROM DrinkInfo WHERE DrinkId='$drinkIds[$i]';";
 
+// query to retrieve the drink  added date
+$getDrinkDateAddedQuery ="SELECT DateAdded FROM Drink WHERE DrinkId='$drinkIds[$i]';";
+
 // running all the queries
 $getDrinkNameQueryResult=mysqli_query($con,$getDrinkNameQuery);
 $getDrinkVolumeQueryResult=mysqli_query($con,$getDrinkVolumeQuery);
@@ -75,6 +78,7 @@ $getDrinkSugarQueryResult=mysqli_query($con,$getDrinkSugarQuery);
 $getDrinkCaloriesQueryResult=mysqli_query($con,$getDrinkCaloriesQuery);
 $getDrinkAlcoholQueryResult=mysqli_query($con,$getDrinkAlcoholQuery);
 $getDrinkVitamincQueryResult=mysqli_query($con,$getDrinkVitamincQuery);
+$getDrinkDateAddedQueryResult=mysqli_query($con,$getDrinkDateAddedQuery);
 
 //extracting the values
 
@@ -103,9 +107,13 @@ $getDrinkVitamincQueryResult=mysqli_query($con,$getDrinkVitamincQuery);
    			 {
    				$getDrinkVitamincQueryResultVal=$row['Vitaminc'];   		 
    		 	 }
+   		 	 while($row = mysqli_fetch_array($getDrinkDateAddedQueryResult))
+   			 {
+   				$getDrinkDateAddedQueryResultVal=$row['Vitaminc'];   		 
+   		 	 }
    		 	 
 // exporting the values as js objects and place them inside the already defined array
-echo "<script>		 drink$i=new Object();			drink$i.name=\"$getDrinkNameQueryResultVal\";		drink$i.volume=\"$getDrinkVolumeQueryResultVal\";		drink$i.sugar=\"$getDrinkSugarQueryResultVal\";		drink$i.calories=\"$getDrinkCaloriesQueryResultVal\";		drink$i.alcohol=\"$getDrinkAlcoholQueryResultVal\";		drink$i.vitaminc=\"$getDrinkVitamincQueryResultVal\";                     </script> ";
+echo "<script>		 drink$i=new Object();			drink$i.name=\"$getDrinkNameQueryResultVal\";		drink$i.dateAdded=\"$getDrinkDateAddedQueryResultVal\";		drink$i.volume=\"$getDrinkVolumeQueryResultVal\";		drink$i.sugar=\"$getDrinkSugarQueryResultVal\";		drink$i.calories=\"$getDrinkCaloriesQueryResultVal\";		drink$i.alcohol=\"$getDrinkAlcoholQueryResultVal\";		drink$i.vitaminc=\"$getDrinkVitamincQueryResultVal\";                     </script> ";
 echo "<script>  userDrinksArray.push(drink$i)  </script> ";
 
 
