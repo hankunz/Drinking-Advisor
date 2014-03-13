@@ -4,7 +4,7 @@ function addToWeek()
 	if(week.length()<=7)
 		week.push(total);
 	else
-	{	
+	{
 		week = [];
 		week.push(total);
 	}
@@ -36,3 +36,17 @@ function addToToday(justDrank)
 		
 	}
 }
+
+describe("test addToWeek()", function(){
+         var week1 = new Array('1', '2', '3', '4', '5', '6', '7');
+         var week2 = new Array('1', '2', '3', '4', '5', '6', '7', '9', '10');
+         var total = '8';
+         
+         it("add total to week", function(){
+            
+            expect(week1).toEqual('1', '2', '3', '4', '5', '6', '7', '8');
+            expect(week2),toEqual('8');
+            expect(week1).not.toEqual('8');
+            expect(week2).not .toEqual('1', '2', '3', '4', '5', '6', '7', '9', '10', '8');
+            });
+         });
