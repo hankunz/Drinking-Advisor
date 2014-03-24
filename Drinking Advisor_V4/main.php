@@ -221,7 +221,7 @@
 
 
 
-					<!-- The side navigation bar-->
+					<!-- The new side navigation bar-->
    					<nav id="menu">
 							<ul>
 								<li><a href="main.php"><i><img src=" images/invites.png"></i>Home</a></li>
