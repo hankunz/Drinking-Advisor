@@ -12,9 +12,9 @@ function findBMI()
 }
 
 
-describe("finBMI", function() {
+describe("findBMI", function() {
     it("Gives Correct BMI", function() {
-        expect(finBMI()).toEqual((weight/(height*height)) * 703);
+        expect(findBMI()).toEqual((weight/(height*height)) * 703);
     });
 });
 
