@@ -19,6 +19,24 @@ describe("findBMI", function() {
 });
 
 
+function findEthanolPercent()
+{
+	var volume = 500;
+	var percentage = 40;
+	
+	var ethanol = (volume*percentage)/100;
+	
+	return ethanol;
+
+}
+
+describe("findEthanolPercent", function() {
+    it("Gives Correct ethanol percentage", function() {
+        expect(findEthanolPercent()).toEqual((volume*percentage)/100);
+    });
+});
+
+
 function ApproxAlcohol()
 {
 	
