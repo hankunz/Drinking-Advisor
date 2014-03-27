@@ -18,6 +18,7 @@
  <script type="text/javascript" src=" js/jquery.ulslide.js"></script>
   <link type="text/css" href=" css/mmenu.css" rel="stylesheet" media="all" />
 <script type="text/javascript" src=" js/jquery.mmenu.min.js"></script>
+<script type="text/javascript" src=" js/FindInfo.js"></script>
 <script type="text/javascript">
 		$(function() {
 			$('nav#menu').mmenu();
@@ -91,7 +92,9 @@
 									<li><a href="#"><span class="day_name">Height: </span>
 						  			<label class="digits">		<?php if(isset($_SESSION['userId'])){echo $getHeightQueryResultVal;}else{echo '-';} ?>				<i></i></label><div class="clear"></div></a></li>
 									<li><a href="#"><span class="day_name">BMI:</span>
-						  			<label class="digits">		<?php if(isset($_SESSION['userId'])){echo $getBmiQueryResultVal;}else{echo '-';} ?>					<i></i></label><div class="clear"></div></a></li>
+						  			<label class="digits">		<script> document.write(findBMI());</script>
+						  			<li><a href="#"><span class="day_name">Approximate Alcohol:</span>
+						  			<label class="digits">		<script> document.write(approxAlcohol()); </script>					<i></i></label><div class="clear"></div></a></li>
 				    		</ul>											
 				      </div>
 		          </div>	           
