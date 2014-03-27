@@ -51,7 +51,7 @@ function ApproxAlcohol()
     var count=0;
     var BAC=0;
   
-	for(count;count<drinkCount;count++)
+	for(count;count<drinks[count];count++)
 	{
 		if(drinks[count].alcohol !== 0)
 		{
