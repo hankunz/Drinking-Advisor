@@ -227,7 +227,7 @@
 								<li><a href="main.php"><i><img src=" images/invites.png"></i>Home</a></li>
 								<li><a href="profile.php"><span><i><img src=" images/user.png"></i>Profile</span></a></li>
 						  		<li><a href="#"><span><i><img src=" images/statistics.png"></i>Statistics</span></a></li>		
-								<li><a href="#"><i><img src=" images/settings.png" alt="" /></i>Settings</a></li>																
+																							
 							</ul>
 					 </nav>
 				
