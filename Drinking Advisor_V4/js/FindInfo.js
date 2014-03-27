@@ -1,3 +1,5 @@
+var weight = 90;
+var height = 180;
 function findBMI()
 {
 	//<?php
@@ -12,12 +14,6 @@ function findBMI()
 }
 
 
-describe("findBMI", function() {
-    it("Gives Correct BMI", function() {
-        expect(findBMI()).toEqual((weight/(height*height)) * 703);
-    });
-});
-
 
 function findEthanolPercent()
 {
@@ -29,12 +25,6 @@ function findEthanolPercent()
 	return ethanol;
 
 }
-
-describe("findEthanolPercent", function() {
-    it("Gives Correct ethanol percentage", function() {
-        expect(findEthanolPercent()).toEqual((volume*percentage)/100);
-    });
-});
 
 
 function ApproxAlcohol()

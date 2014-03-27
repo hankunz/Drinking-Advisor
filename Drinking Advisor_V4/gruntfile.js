@@ -20,7 +20,7 @@ module.exports = function(grunt) {
                 options: {
                     specs: 'test/*Spec.js',
                     //template: 'test.tmpl',
-                    //helpers: 'test/helpers/*.js',
+                    helpers: 'test/helpers/*.js',
                     keepRunner: true
                 }
             }
