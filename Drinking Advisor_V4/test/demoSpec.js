@@ -38,3 +38,48 @@ describe("findEthanolPercent", function() {
             expect(findEthanolPercent()).not.toEqual((0).toFixed(2));
             });
          });
+
+describe("ApproxAlcohol", function(){
+         function ApproxAlcohol()
+         {
+         
+         var constant1;
+         var constant2;
+         var count=0;
+         var BAC=0;
+         
+         for(count;count<drinks[count];count++)
+         {
+         if(drinks[count].alcohol !== 0)
+         {
+         ethanol = drinks[count].alcohol;
+         hoursSince = date.getTime() - drinks[count].time;
+         hoursSince = hoursSince/1000/60/60;  //milliseconds to hours
+         
+         if(user.gendre == 'M')
+         {
+         constant1 = 0.7;
+         constant2 = 0.1;
+         }
+         else
+         {
+         constant1 = 0.6;
+         constant2 = 0.085;
+         }
+         
+         
+         BAC += (((ethanol/(user.weight * constant1))*(constant2*hoursSince))).toFixed(2);
+         
+         }		
+         
+         
+         }	
+         
+         
+         return BAC;
+         }
+         if("Gives Correct BAC", function(){
+            expect(true).toEqual(true);
+            });
+
+         });
