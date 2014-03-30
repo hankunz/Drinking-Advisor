@@ -17,12 +17,6 @@ $getGenderQuery ="SELECT Gender FROM Profile WHERE Id='$userId';";
 $getCountryQuery ="SELECT Country FROM Profile WHERE Id='$userId';";
 //query to retrieve BMI
 $getBmiQuery ="SELECT Bmi FROM Profile WHERE Id='$userId';";
-//query to retrieve Alcohol Limit
-$getAlcoholLimitQuery ="SELECT AlcoholLimit FROM Goal WHERE Id='$userId';";
-//query to retrieve Sugar Limit
-$getSugarLimitQuery ="SELECT SugarLimit FROM Goal WHERE Id='$userId';";
-//query to retrieve Vitamin C Limit
-$getVitaminCQuery ="SELECT VitaminCLimit FROM Goal WHERE Id='$userId';";
 
 // initializing database connection
 require 'php/mysqlConnection.php';
@@ -35,9 +29,6 @@ $getWeightQueryResult=mysqli_query($con,$getWeightQuery);
 $getGenderQueryResult=mysqli_query($con,$getGenderQuery);
 $getCountryQueryResult=mysqli_query($con,$getCountryQuery);
 $getBmiQueryResult=mysqli_query($con,$getBmiQuery);
-$getAlcoholLimitQueryResult=mysqli_query($con,$getAlcoholLimitQuery);
-$getSugarLimitQueryResult=mysqli_query($con,$getSugarLimitQuery);
-$getVitaminCLimitQueryResult=mysqli_query($con,$getVitaminCLimitQuery);
 
 // closing the database connection
 mysqli_close($con);
@@ -76,15 +67,6 @@ mysqli_close($con);
    	{
    	 $getBmiQueryResultVal=$row['Bmi'];   		 
    	}
-	while($row = mysqli_fetch_array($getAlcoholLimitQueryResult))
-   	{
-   	 $getAlcoholLimitQueryResultVal=$row['AlcoholLimit'];   		 
-   	
-	while($row = mysqli_fetch_array($getVitaminCLimitQueryResult))
-   	{
-   	 $getVitaminCLimitQueryResultVal=$row['VitaminCLimit'];   		 
-   	}
-	
    	
    	
 
@@ -95,9 +77,6 @@ echo "<script> var height='$getHeightQueryResultVal'; </script> ";
 echo "<script> var weight='$getWeightQueryResultVal'; </script> ";
 echo "<script> var gender='$getGenderQueryResultVal'; </script> ";
 echo "<script> var country='$getCountryQueryResultVal'; </script> ";
-echo "<script> var alcoholLimit='$getAlcoholLimitQueryResultVal'; </script> ";
-echo "<script> var sugarLimit='$getSugarLimitQueryResultVal'; </script> ";
-echo "<script> var vitaminCLimit='$getVitaminCLimitQueryResultVal'; </script> ";
 
 }
 

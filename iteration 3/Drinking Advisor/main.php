@@ -21,7 +21,7 @@ users' daily drinking status.	-->
 		<script src=" js/pagetransitions.js"></script>
 		<script src=" js/DrawGraph.js"></script>
 	  
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+ <script src=" js/AddDrinks.js"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href=" css/style.css" rel="stylesheet" type="text/css" media="all"/>
 <script type="text/javascript" src=" js/jquery.js"></script>
 <script type="text/javascript" src=" js/login.js"></script>
@@ -134,7 +134,7 @@ users' daily drinking status.	-->
 				   </div>
 				   	   </div>
 				   
-
+<script> ResetDay(); </script>
 <!-- The page for adding a drink-->
 <div class="pt-page pt-page-2">   
  	 <div class="wrap">  
