@@ -3,7 +3,6 @@
  session_start();
   ?>
 
- 
 
 <!-- This page creates a profile page to show the users' information and some healthy status calculated from the info.-->
 <!DOCTYPE HTML>
@@ -11,7 +10,9 @@
 <title>Drinking Advisor - Profile</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
 <link href=" css/style.css" rel="stylesheet" type="text/css" media="all"/>
 <script type="text/javascript" src=" js/jquery.js"></script>
 <script type="text/javascript" src=" js/login.js"></script>
@@ -76,67 +77,46 @@
 	  <div class="main">  
 	    <div class="wrap">  		 
 	  
-	  		<!-- show user profile -->
-            <div class="column_middle">
+	  		
 
-		         <div class="weather">
-		               <h3><i><img src=" images/user.png" alt="" /> </i>Profile</h3>
-
-					   
-						<?php require 'php/drinkDataExport.php'; ?> 
-						
-						<div class="temp_list">
-				      			<ul>
-						  		    <li><a href="#"><span class="day_name">Name: </span>
-						  		   
-						  			<label class="digits">		<?php if(isset($_SESSION['userId'])){echo $getNameQueryResultVal;}else{echo '-';} ?>				<i></i></label><div class="clear"></div></a></li>
-						  			
-						  			<li><a href="#"><span class="day_name">Gender: </span>
-						  			<label class="digits">		<?php if(isset($_SESSION['userId'])){echo $getGenderQueryResultVal;}else{echo '-';} ?>				<i></i></label><div class="clear"></div></a></li>
-									<li><a href="#"><span class="day_name">Age: </span>
-						  			<label class="digits">		<?php if(isset($_SESSION['userId'])){echo $getAgeQueryResultVal;}else{echo '-';} ?>				<i></i></label><div class="clear"></div></a></li>
-									<li><a href="#"><span class="day_name">Weight: </span>
-						  			<label class="digits">		<?php if(isset($_SESSION['userId'])){echo $getWeightQueryResultVal;}else{echo '-';} ?>				<i></i></label><div class="clear"></div></a></li>
-									<li><a href="#"><span class="day_name">Height: </span>
-						  			<label class="digits">		<?php if(isset($_SESSION['userId'])){echo $getHeightQueryResultVal;}else{echo '-';} ?>				<i></i></label><div class="clear"></div></a></li>
-									<li><a href="#"><span class="day_name">BMI:</span>
-						  			<label class="digits">		<?php if(isset($_SESSION['userId'])){echo $getBmiQueryResultVal;}else{echo '-';} ?>		<i></i></label><div class="clear"></div></a></li>
-									
-									<li><a href="#"><span class="day_name">Approximate Current Blood Alcohol:</span>
-						  			<label class="digits">
-									
-									<script>
-									switch(approxAlcohol())
-									{
-									case <0.1:
-										</script>
-										<font color="green">
-										<script>
-										break;
-									case >0.1 && <0.2:
-										</script>
-										<font color="orange">
-										<script>
-										break;
-									case >0.2:
-										</script>
-										<font color="red">
-										<script>
-										break;			
-									}
-									</script>
-									
-									
-									
-									<script>document.write(approxAlcohol())</script>
-									</font>
-									<br>
-									<a href="#"><span class="day_name">Please note: Current BAC calculation does not account for food intake
-					                <i></i></label><div class="clear"></div></a></li>
-				    		</ul>											
-				    		</ul>											
-				      </div>
-		          </div>	           
+		     	    		 <div class="chart">
+		               <h3>Drinking Status</h3>
+		                  <div class="diagram">
+		                  <canvas id="canvas" height="200" width="200"> </canvas>
+		                 
+		                 </div>				
+						<div class="chart_list">
+			           	  <ul>
+			           	  	<li><a href="#" class="red">Alcohol<p class="percentage">21<em>%</em></p></a></li>
+			           	  	<li><a href="#" class="purple">Calories<p class="percentage">48<em>%</em></p></a></li>
+			           	  	<li><a href="#" class="yellow">Vitamin C<p class="percentage">9<em>%</em></p></a></li>
+			           	  	<li><a href="#" class="blue">Sugar<p class="percentage">32<em>%</em></p></a></li>
+			           	  	<div class="clear"></div>	
+			           	  </ul>
+			           </div>
+			           <script>
+						var doughnutData = [
+								{
+									value: 21,
+									color:"#E64C65"
+								},
+								{
+									value : 48,
+									color : "#11A8AB"
+								},							
+								{
+									value : 32,
+									color : "#4FC4F6"
+								},	
+								{
+									value : 9,
+									color : "#FCB150"
+								},							
+							
+							];				
+							var myDoughnut = new Chart(document.getElementById("canvas").getContext("2d")).Doughnut(doughnutData);					
+					</script>
+		          </div>
 		         
 		       
     	    </div>
@@ -151,8 +131,7 @@
 								<li><a href="main.php"><i><img src=" images/invites.png"></i>Home</a></li>
 								<li><a href="profile.php"><span><i><img src=" images/user.png"></i>Profile</span></a></li> 
 						  		<li><a href="goal.php"><span><i><img src=" images/statistics.png"></i>Goals</span></a></li>		
-								<li><a href="history.php"><i><img src=" images/statistics.png" alt="" /></i>History</a></li>
-																								
+								<li><a href="history.php"><i><img src=" images/statistics.png" alt="" /></i>History</a></li>																
 							</ul>
 					 </nav>
 					  <div class="copy-right">

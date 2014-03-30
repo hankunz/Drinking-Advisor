@@ -88,8 +88,15 @@
 						<div class="temp_list">
 				      			<ul>		  		    									
 									<li><a href="#"><span class="day_name"></span>
-									<script>document.write(userDrinksArray[0].name+ " - " + userDrinksArray[0].volume+ " - " + userDrinksArray[0].calories+
-									" - "+ userDrinksArray[0].sugar+ " - " +userDrinksArray[0].alcohol)</script>
+									<script>document.write("Drink&nbsp&nbspVolume&nbsp&nbspCalories&nbsp&nbspSugar&nbsp&nbspAlcohol<br/>");
+									for(var i = 0; i<userDrinksArray.length; i++)
+									{
+									document.write(userDrinksArray[i].name+ "&nbsp&nbsp" + userDrinksArray[i].volume+ "&nbsp&nbsp" + userDrinksArray[i].calories+
+									"&nbsp&nbsp"+ userDrinksArray[i].sugar+ "&nbsp&nbsp" +userDrinksArray[i].alcohol + "<br/>");
+									
+									}
+									
+									</script>
 									<i></i></label><div class="clear"></div></a></li>
 			
 				    		</ul>											
@@ -108,7 +115,7 @@
 							<ul>
 								<li><a href="main.php"><i><img src=" images/invites.png"></i>Home</a></li>
 								<li><a href="profile.php"><span><i><img src=" images/user.png"></i>Profile</span></a></li> 
-						  		<li><a href="#"><span><i><img src=" images/statistics.png"></i>Statistics</span></a></li>		
+						  		<li><a href="goal.php"><span><i><img src=" images/statistics.png"></i>Goals</span></a></li>		
 								<li><a href="history.php"><i><img src=" images/statistics.png" alt="" /></i>History</a></li>																
 							</ul>
 					 </nav>
