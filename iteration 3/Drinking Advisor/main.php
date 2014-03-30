@@ -42,6 +42,7 @@ users' daily drinking status.	-->
 <?php require 'php/dataRetrieval.php';?>
 <?php require 'php/drinkInsertion.php';?>
 <?php require 'php/drinkDataExport.php';?>
+<?php require 'php/addDrinkOptions.php';?>
 
 	    <!-- main tag for the UI -->
 		<div class="wrap">	 
@@ -110,7 +111,7 @@ users' daily drinking status.	-->
 				  
 <!-- add drink error messages -->		          
 <?php require 'php/addDrinkErrors.php';?>
-	
+
 
 </div>
 					
@@ -129,23 +130,68 @@ users' daily drinking status.	-->
 
 <!-- The page for adding a drink-->
 <div class="pt-page pt-page-2">   
- <div class="wrap">  		 
+ 	 <div class="wrap">  
+ 
+ 		 
 	       <div class="column_left">	
 
 				 <div class="column_right_grid sign-in">
 				 	<div class="sign_in">
 				       <h3>What did you just drink?</h3>
 				
+
 					    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" >
-					    	<span>
+						
+					    	<!-- <span>
 					 	    <i><img src=" images/likes.png" alt="" /></i>
 					 	    <input name="drinkName" type="text" value="Enter the name of the drink. E.g. Orange Juice" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter the name of the drink. E.g. Orange Juice';}">
-					 	    </span>
-					 	    <span>
+					 	    </span>-->
+						
+							<span>
+							<i style="position:relative; left:-22%"><img src=" images/likes.png" alt="" /></i>
+							<select  id = "selectMenu" name ='SelectDrink' onchange="s_click(this)">
+							<option>Select the type of the drink</option>	
+							<?php echo $options ?>
+							<option value = "1">Not here? Add by yourself!</option>
+							</select>
+							  </span>
+							   <script type="text/javascript">
+								function s_click(obj) {
+									var fileds = document.getElementById("fileds");
+									var num = 0;
+									for (var i = 0; i < obj.options.length; i++) {
+										if (obj.options[i].selected == true) {
+											num++;
+										}
+									}
+									if (num == 1) {
+										var value = obj.options[obj.selectedIndex].value;
+										if(value == 1)
+										{											
+											fileds.style.display="block";
+											}
+										else
+											fileds.style.display="none";
+									}
+								}
+								
+				
+							</script>
+					 	    
+					 	    <span id = "volume">
 					 	     <i><img src=" images/statistics.png" alt="" /></i>
 					 	     <input name="drinkVolume" type="text" value="Enter the volume (ml.). E.g. 355" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter the volume (ml.). E.g. 355';}">
 					 	    </span>
-					 	    <span>
+							
+							
+							
+							<div id="fileds" style="display:none"  >
+									<span>
+					 	    <i><img src=" images/likes.png" alt="" /></i>
+					 	    <input name="drinkName" type="text" value="Enter the name of the drink. E.g. Orange Juice" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter the name of the drink. E.g. Orange Juice';}">
+					 	    </span>			    	
+							
+							 <span>
 					 	     <i><img src=" images/statistics.png" alt="" /></i>
 					 	     <input name="drinkCalories" type="text" value="Enter the drink's calories. E.g. 50" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter the drink\'s calories. E.g. 50';}">
 					 	    </span>
@@ -161,37 +207,41 @@ users' daily drinking status.	-->
 					 	     <i><img src=" images/statistics.png" alt="" /></i>
 					 	     <input name="drinkVitaminc" type="text" value="Enter the drink's Vitamin c. E.g. 3" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter the drink\'s Vitamin c. E.g. 3';}">
 					 	    </span>
-					 	
-
+							</div>
+							
+					 	  
+					 	    <input class="iterateEffects" type="submit" value="Add!" >
+					 	    </form>
 
 				   </div>
+				 
 
              </div>
     	
  	 </div>
-	 
-	 				  	<div class="addDrink">
-					  <!--  <form> -->
-					 		<input class="iterateEffects" type="submit" value="Add!" >
-					 	</form>					 	
-	
+	  </div>
+  	<div class="addDrink">
+					    <form>
+					 		
+					 	</form>
 				   </div>
 				   
    </div>   
-		          </div>
+		         
 				  
 				  
 </div>
 
 
 
-				<!-- The side navigation bar-->
+					<!-- The new side navigation bar-->
    					<nav id="menu">
 							<ul>
 								<li><a href="main.php"><i><img src=" images/invites.png"></i>Home</a></li>
-								<li><a href="profile.php"><span><i><img src=" images/user.png"></i>Profile</span></a></li> 
+								<li><a href="profile.php"><span><i><img src=" images/user.png"></i>Profile</span></a></li>
+								<li><a href="history.php"><i><img src=" images/statistics.png" alt="" /></i>History</a></li>
 						  		<li><a href="#"><span><i><img src=" images/statistics.png"></i>Statistics</span></a></li>		
-								<li><a href="#"><i><img src=" images/settings.png" alt="" /></i>Settings</a></li>																
+																							
 							</ul>
 					 </nav>
 				
@@ -201,6 +251,7 @@ users' daily drinking status.	-->
 		<script src=" js/jquery.dlmenu.js"></script>
 		<script src=" js/pagetransitions.js"></script>
 	
+
 </body>
 </html>
 

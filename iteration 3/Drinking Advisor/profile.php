@@ -3,7 +3,7 @@
  session_start();
   ?>
 
-  ?>
+ 
 
 <!-- This page creates a profile page to show the users' information and some healthy status calculated from the info.-->
 <!DOCTYPE HTML>
@@ -97,9 +97,8 @@
 									<li><a href="#"><span class="day_name">Height: </span>
 						  			<label class="digits">		<?php if(isset($_SESSION['userId'])){echo $getHeightQueryResultVal;}else{echo '-';} ?>				<i></i></label><div class="clear"></div></a></li>
 									<li><a href="#"><span class="day_name">BMI:</span>
-						  			<label class="digits">
-									<script>document.write(findBMI())</script>
-									<i></i></label><div class="clear"></div></a></li>
+						  			<label class="digits">		<?php if(isset($_SESSION['userId'])){echo $getBmiQueryResultVal;}else{echo '-';} ?>		<i></i></label><div class="clear"></div></a></li>
+				    		</ul>											
 				    		</ul>											
 				      </div>
 		          </div>	           
@@ -116,10 +115,9 @@
 							<ul>
 								<li><a href="main.php"><i><img src=" images/invites.png"></i>Home</a></li>
 								<li><a href="profile.php"><span><i><img src=" images/user.png"></i>Profile</span></a></li>
-						  		<li><a href=" addDrink.html"><span> <i><img src=" images/events.png"></i>History</span><label class="digits">5</label><div class="clear"></div></a></li>
-						  		<li><a href="#"><i><img src=" images/favourite.png" alt="" /></i>Favorites</a></li>
+						  		<li><a href="history.php"><i><img src=" images/statistics.png" alt="" /></i>History</a></li>
 						  		<li><a href="#"><span><i><img src=" images/statistics.png"></i>Statistics</span></a></li>		
-								<li><a href="#"><i><img src=" images/settings.png" alt="" /></i>Settings</a></li>																
+																								
 							</ul>
 					 </nav>
 					  <div class="copy-right">

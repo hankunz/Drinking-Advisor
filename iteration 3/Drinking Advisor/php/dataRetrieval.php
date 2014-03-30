@@ -15,7 +15,8 @@ $getWeightQuery ="SELECT Weight FROM Profile WHERE Id='$userId';";
 $getGenderQuery ="SELECT Gender FROM Profile WHERE Id='$userId';";
 //query to retrieve country
 $getCountryQuery ="SELECT Country FROM Profile WHERE Id='$userId';";
-
+//query to retrieve BMI
+$getBmiQuery ="SELECT Bmi FROM Profile WHERE Id='$userId';";
 
 // initializing database connection
 require 'php/mysqlConnection.php';
@@ -27,6 +28,7 @@ $getHeightQueryResult=mysqli_query($con,$getHeightQuery);
 $getWeightQueryResult=mysqli_query($con,$getWeightQuery);
 $getGenderQueryResult=mysqli_query($con,$getGenderQuery);
 $getCountryQueryResult=mysqli_query($con,$getCountryQuery);
+$getBmiQueryResult=mysqli_query($con,$getBmiQuery);
 
 // closing the database connection
 mysqli_close($con);
@@ -60,6 +62,10 @@ mysqli_close($con);
    	while($row = mysqli_fetch_array($getCountryQueryResult))
    	{
    	 $getCountryQueryResultVal=$row['Country'];   		 
+   	}
+   	while($row = mysqli_fetch_array($getBmiQueryResult))
+   	{
+   	 $getBmiQueryResultVal=$row['Bmi'];   		 
    	}
    	
    	

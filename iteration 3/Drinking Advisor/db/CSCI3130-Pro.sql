@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 27, 2014 at 10:18 PM
+-- Generation Time: Mar 30, 2014 at 06:43 AM
 -- Server version: 5.5.33
 -- PHP Version: 5.5.3
 
@@ -33,14 +33,15 @@ CREATE TABLE `Drink` (
   `TimeAdded` varchar(30) NOT NULL,
   PRIMARY KEY (`DrinkId`),
   KEY `Id` (`Id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `Drink`
 --
 
 INSERT INTO `Drink` (`DrinkId`, `Id`, `DateAdded`, `TimeAdded`) VALUES
-(7, 8, '2014-03-13', '3:31:37 pm');
+(8, 8, '2014-03-30', '1:39:15 am'),
+(9, 8, '2014-03-30', '1:39:57 am');
 
 -- --------------------------------------------------------
 
@@ -72,7 +73,8 @@ CREATE TABLE `DrinkInfo` (
 --
 
 INSERT INTO `DrinkInfo` (`DrinkId`, `Name`, `Label`, `Volume`, `Price`, `Review`, `Sugar`, `Protein`, `Fat`, `Calories`, `Cholesterol`, `Sodium`, `Alcohol`, `Vitaminc`) VALUES
-(7, 'asd', NULL, 5, NULL, NULL, 5, NULL, NULL, 5, NULL, NULL, 5, 5);
+(8, 'Beer', NULL, 300, NULL, NULL, 0, NULL, NULL, 20, NULL, NULL, 5, 0),
+(9, 'Pepsi', NULL, 250, NULL, NULL, 20, NULL, NULL, 100, NULL, NULL, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -120,6 +122,36 @@ CREATE TABLE `Place` (
   PRIMARY KEY (`Address`),
   KEY `DrinkId` (`DrinkId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `PreDefinedDrink`
+--
+
+CREATE TABLE `PreDefinedDrink` (
+  `Name` varchar(50) NOT NULL,
+  `Label` varchar(50) DEFAULT NULL,
+  `Price` double DEFAULT NULL,
+  `Review` varchar(200) DEFAULT NULL,
+  `Sugar` int(5) NOT NULL,
+  `Protein` int(2) DEFAULT NULL,
+  `Fat` int(2) DEFAULT NULL,
+  `Calories` int(5) NOT NULL,
+  `Cholesterol` int(2) DEFAULT NULL,
+  `Sodium` int(2) DEFAULT NULL,
+  `Alcohol` int(5) NOT NULL,
+  `Vitaminc` int(5) NOT NULL,
+  PRIMARY KEY (`Name`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `PreDefinedDrink`
+--
+
+INSERT INTO `PreDefinedDrink` (`Name`, `Label`, `Price`, `Review`, `Sugar`, `Protein`, `Fat`, `Calories`, `Cholesterol`, `Sodium`, `Alcohol`, `Vitaminc`) VALUES
+('Beer', NULL, NULL, NULL, 0, NULL, NULL, 20, NULL, NULL, 5, 0),
+('Pepsi', NULL, NULL, NULL, 20, NULL, NULL, 100, NULL, NULL, 0, 0);
 
 -- --------------------------------------------------------
 

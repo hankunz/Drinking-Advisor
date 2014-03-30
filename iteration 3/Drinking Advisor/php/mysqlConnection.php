@@ -1,4 +1,9 @@
 		<?php
+		
+		// setting the default timezone to halifax
+  		date_default_timezone_set('America/Halifax');
+  		
+  		
 		$username="admin";
 		$password="admin";
 		$dbname="CSCI3130-Pro";

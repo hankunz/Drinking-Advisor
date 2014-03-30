@@ -1,4 +1,7 @@
 <?php 
+if(isset($drinkChoiceErr)){
+echo $drinkChoiceErr."<br>";
+} 
 if(isset($drinkNameErr)){
 echo $drinkNameErr."<br>";
 } 
@@ -17,4 +20,8 @@ echo $drinkAlcoholErr."<br>";
 if(isset($drinkVitamincErr)){
 echo $drinkVitamincErr."<br>";
 } 
+
  ?>
+ 
+ 
+ 

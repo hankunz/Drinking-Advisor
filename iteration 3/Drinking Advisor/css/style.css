@@ -818,6 +818,24 @@ fieldset#body {
 	vertical-align:middle;
 	margin-bottom:4px;
 }
+#selectMenu
+{
+	left:19%;
+	padding:8px;
+    color:#FFF;
+    font-size:1em;
+	background:#50597b;
+    outline:none;
+    border:none;
+    margin:0px auto;
+	margin-left:16px;
+    width:30%;  
+    -webkit-apperance:none;
+    font-family: 'ambleregular';
+	position:relative;
+   
+}
+
 .column_right_grid input[type="text"],.column_right_grid input[type="password"]{
 	padding:8px;
     color:#FFF;
@@ -830,17 +848,17 @@ fieldset#body {
     -webkit-apperance:none;
     font-family: 'ambleregular';
 }
-.addDrink input[type="button"],.sign_in input[type="button"]{
+.addDrink input,.sign_in input{
 	padding:15px 2.5em;
 	color:#FFF;
 	font-size:1em;
-	text-transform:uppercase;
+
 	cursor:pointer;
 	border:none;
 	outline:none;
     background:#11a8ab;      
 	
-	left:30%;
+	left:42%;
 	top:10px;
 	position:relative;
 	border-radius:5px;
