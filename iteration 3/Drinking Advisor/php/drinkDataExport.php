@@ -21,6 +21,10 @@ $getDrinkIdCountQueryResult=mysqli_query($con,$getDrinkIdCountQuery);
 
 // if the count is zero or there are no rows entered by this user, then close the database connection
 if($getDrinkIdCountQueryResultVal==0){
+
+// giving a status for no drinks in js
+echo "<script>  var drinkStatus=0;  </script> ";
+
 // closing database connection
 mysqli_close($con);
 }
@@ -71,6 +75,9 @@ $getDrinkVitamincQuery ="SELECT Vitaminc FROM DrinkInfo WHERE DrinkId='$drinkIds
 // query to retrieve the drink  added date
 $getDrinkDateAddedQuery ="SELECT DateAdded FROM Drink WHERE DrinkId='$drinkIds[$i]';";
 
+// query to retrieve the drink  added date
+$getDrinkTimeAddedQuery ="SELECT TimeAdded FROM Drink WHERE DrinkId='$drinkIds[$i]';";
+
 // running all the queries
 $getDrinkNameQueryResult=mysqli_query($con,$getDrinkNameQuery);
 $getDrinkVolumeQueryResult=mysqli_query($con,$getDrinkVolumeQuery);
@@ -79,6 +86,7 @@ $getDrinkCaloriesQueryResult=mysqli_query($con,$getDrinkCaloriesQuery);
 $getDrinkAlcoholQueryResult=mysqli_query($con,$getDrinkAlcoholQuery);
 $getDrinkVitamincQueryResult=mysqli_query($con,$getDrinkVitamincQuery);
 $getDrinkDateAddedQueryResult=mysqli_query($con,$getDrinkDateAddedQuery);
+$getDrinkTimeAddedQueryResult=mysqli_query($con,$getDrinkTimeAddedQuery);
 
 //extracting the values
 
@@ -111,12 +119,17 @@ $getDrinkDateAddedQueryResult=mysqli_query($con,$getDrinkDateAddedQuery);
    			 {
    				$getDrinkDateAddedQueryResultVal=$row['DateAdded'];   		 
    		 	 }
+			 while($row = mysqli_fetch_array($getDrinkTimeAddedQueryResult))
+   			 {
+   				$getDrinkTimeAddedQueryResultVal=$row['TimeAdded'];   		 
+   		 	 }
    		 	 
 // exporting the values as js objects and place them inside the already defined array
-echo "<script>		 drink$i=new Object();			drink$i.name=\"$getDrinkNameQueryResultVal\";		drink$i.dateAdded=\"$getDrinkDateAddedQueryResultVal\";		drink$i.volume=\"$getDrinkVolumeQueryResultVal\";		drink$i.sugar=\"$getDrinkSugarQueryResultVal\";		drink$i.calories=\"$getDrinkCaloriesQueryResultVal\";		drink$i.alcohol=\"$getDrinkAlcoholQueryResultVal\";		drink$i.vitaminc=\"$getDrinkVitamincQueryResultVal\";                     </script> ";
+echo "<script>		 drink$i=new Object();			drink$i.name=\"$getDrinkNameQueryResultVal\";		drink$i.dateAdded=\"$getDrinkDateAddedQueryResultVal\";	    drink$i.timeAdded=\"$getDrinkTimeAddedQueryResultVal\";		drink$i.volume=\"$getDrinkVolumeQueryResultVal\";		drink$i.sugar=\"$getDrinkSugarQueryResultVal\";		drink$i.calories=\"$getDrinkCaloriesQueryResultVal\";		drink$i.alcohol=\"$getDrinkAlcoholQueryResultVal\";		drink$i.vitaminc=\"$getDrinkVitamincQueryResultVal\";                     </script> ";
 echo "<script>  userDrinksArray.push(drink$i)  </script> ";
 
-
+// giving a status for existing drinks in js
+echo "<script>  var drinkStatus=1;  </script> ";
 
 }
 

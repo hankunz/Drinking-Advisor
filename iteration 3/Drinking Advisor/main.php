@@ -98,15 +98,22 @@ users' daily drinking status.	-->
 					
 		              <h3>Drinking Status</h3>
 		                 <div class="diagram">
-		                 <canvas id="canvas" height="300" width="450"></canvas>
+		                 <canvas id="canvas" height="screen.availHeight/2" width="screen.availWidth/2"></canvas>
 
-	<font size="6" color="rgb(0,0,0)">  Sugar Consumption  </font> <br>
-	<font size="6" color="rgb(8,163,0)"> Alcohol Consumption   </font>
-	<?php require 'php/drinkDataExport.php'; ?>
-	
-	<script>
+
+<script>
 	drawGraph();
 	</script>
+	<br>
+	
+	<font size="6" color="rgb(0,0,0)">  Sugar Consumption  </font> <br>
+	<font size="6" color="rgb(8,163,0)"> Alcohol Consumption   </font>
+	<br>
+	<font size="6" color="orange"> Vitamin C   </font>
+	
+	<?php require 'php/drinkDataExport.php'; ?>
+	
+	
 		          </div>
 				  
 <!-- add drink error messages -->		          

@@ -14,6 +14,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
   		$drinkCalories = preventScript($_POST["drinkCalories"]);
   		$drinkSugar = preventScript($_POST["drinkSugar"]);
   		$drinkAlcohol = preventScript($_POST["drinkAlcohol"]);
+		$drinkAlcohol = ($drinkVolume*$drinkAlcohol)/100; 
+		
   		$drinkVitaminc = preventScript($_POST["drinkVitaminc"]);
   		
   		//validation

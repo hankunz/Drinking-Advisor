@@ -11,6 +11,21 @@ function findBMI()
 	 return BMI;
 }
 
+
+
+function findEthanolPercent()
+{
+	var volume = 500;
+	var percentage = 40;
+	
+	var ethanol = (volume*percentage)/100;
+	
+	return ethanol;
+
+}
+
+
+
 /**
 * This method takes recent drink information
 * and uses it to approximate the user's blood alcohol content
@@ -18,39 +33,49 @@ function findBMI()
 * @method approxAlcohol
 *
 */
-function approxAlcohol(name)
+function approxAlcohol()
 {
-	//Initialize variables to be used in the final equation
+	
+    //<?php
+	//$user= mysqli_query($connect,"SELECT weight,gender FROM Profile where id = 'name' "); ?>
+
+	//var user = <?php echo json_encode($user); ?>
+	
+	
     var constant1;
     var constant2;
     var count=0;
     var BAC=0;
+	var localTime = new Date().toLocaleTimeString();
   
-    //Read the entire drinks array  
-	for(count;count<drinks.length();count++)
+	for(count;count<userDrinksArray.length;count++)
 	{
-		//If there is alcohol in the drink
-		if(drinks[count].alcohol !== 0)
+		if(userDrinksArray[count].alcohol !== 0)
 		{
-			//get the ethanol content and the time since the last drink
-			ethanol = drinks[count].alcohol;
-			hoursSince = date.getTime() - drinks[count].time;
-			hoursSince = hoursSince/1000/60/60;  //milliseconds to hours
+			//The amount of ethanol measured with a standard of 10 grams
+			ethanol = userDrinksArray[count].alcohol/10;
 			
-			//Set the constants based on gender
+			var timeAdded = userDrinksArray[count].timeAdded;
+			
+			var timeAdd = parseInt(timeAdded.slice(0,timeAdded.length - 9) + timeAdded.slice(timeAdded.length - 8,timeAdded.length - 6));
+			var time = parseInt(localTime.slice(0,localTime.length - 9) + localTime.slice(localTime.length - 8,localTime.length - 6));
+			
+			hoursSince = time - timeAdd;
+			hoursSince = hoursSince/1000/60/60;  //milliseconds to hours
+				
 			if(gender == 'M')
 			{	
-				constant1 = 0.7;
-				constant2 = 0.1;
+				constant1 = 0.58;
+				constant2 = 0.015;
 			}
 			else
 			{	
-				constant1 = 0.6;
-				constant2 = 0.085;
+				constant1 = 0.49;
+				constant2 = 0.017;
 			}
-								
-			//Find the approximate blood alcohol content
-			BAC += ((ethanol/(weight * constant1))*(constant2*hoursSince));
+			
+			//BAC += ((ethanol/(weight * constant1))*(constant2*hoursSince));
+			BAC += (0.806 * ethanol * 1.2) / (constant1*weight) - (constant2*hoursSince)
 		
 		}		
 		

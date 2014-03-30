@@ -82,6 +82,9 @@
 		         <div class="weather">
 		               <h3><i><img src=" images/user.png" alt="" /> </i>Profile</h3>
 
+					   
+						<?php require 'php/drinkDataExport.php'; ?> 
+						
 						<div class="temp_list">
 				      			<ul>
 						  		    <li><a href="#"><span class="day_name">Name: </span>
@@ -98,6 +101,38 @@
 						  			<label class="digits">		<?php if(isset($_SESSION['userId'])){echo $getHeightQueryResultVal;}else{echo '-';} ?>				<i></i></label><div class="clear"></div></a></li>
 									<li><a href="#"><span class="day_name">BMI:</span>
 						  			<label class="digits">		<?php if(isset($_SESSION['userId'])){echo $getBmiQueryResultVal;}else{echo '-';} ?>		<i></i></label><div class="clear"></div></a></li>
+									
+									<li><a href="#"><span class="day_name">Approximate Current Blood Alcohol:</span>
+						  			<label class="digits">
+									
+									<script>
+									switch(approxAlcohol())
+									{
+									case <0.1:
+										</script>
+										<font color="green">
+										<script>
+										break;
+									case >0.1 && <0.2:
+										</script>
+										<font color="orange">
+										<script>
+										break;
+									case >0.2:
+										</script>
+										<font color="red">
+										<script>
+										break;			
+									}
+									</script>
+									
+									
+									
+									<script>document.write(approxAlcohol())</script>
+									</font>
+									<br>
+									<a href="#"><span class="day_name">Please note: Current BAC calculation does not account for food intake
+					                <i></i></label><div class="clear"></div></a></li>
 				    		</ul>											
 				    		</ul>											
 				      </div>
