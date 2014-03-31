@@ -79,7 +79,7 @@ describe("ApproxAlcohol", function(){
          return BAC;
          }
          if("Gives Correct BAC", function(){
-            expect(true).toEqual(true);
+            expect(ApproxAlcohol()).NOT.toEqual(false);
             });
 
          });
