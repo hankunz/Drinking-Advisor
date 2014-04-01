@@ -159,7 +159,7 @@ function drawGraph()
 			}
 		}
 		
-		var labelNames = newArray("Mon","Tue","Wed","Thu","Fri","Sat","Sun","Mon", "Tue","Wed","Thu","Fri","Sat");
+		var labelNames = newArray("Sun","Mon","Tue","Wed","Thu","Fri","Sat","Sun","Mon", "Tue","Wed","Thu","Fri","Sat");
 
 		//Using the Chart.js library, creates the line chart
 		//Values graphed are the daily sugar and alcohol values
