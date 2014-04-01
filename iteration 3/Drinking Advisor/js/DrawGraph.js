@@ -164,7 +164,7 @@ function drawGraph()
 		//Using the Chart.js library, creates the line chart
 		//Values graphed are the daily sugar and alcohol values
 		var lineChartData = {
-			labels : [labelNames[today],labelNames[today+1],labelNames[today+2]",labelNames[today+3],labelNames[today+4],labelNames[today+5],labelNames[today]+6],
+			labels : [labelNames[today],labelNames[today+1],labelNames[today+2],labelNames[today+3],labelNames[today+4],labelNames[today+5],labelNames[today]+6],
 			datasets : [
 			{
 				fillColor : "rgba(192,40,10,0.5)",
