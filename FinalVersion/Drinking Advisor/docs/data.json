@@ -1,0 +1,231 @@
+{
+    "project": {
+        "name": "demoapp",
+        "description": "CSCI 3130 Test App",
+        "version": "0.0.1"
+    },
+    "files": {
+        "js/AddDrinks.js": {
+            "name": "js/AddDrinks.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "js/DrawGraph.js": {
+            "name": "js/DrawGraph.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "js/FindInfo.js": {
+            "name": "js/FindInfo.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "js/jquery.dlmenu.js": {
+            "name": "js/jquery.dlmenu.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "js/jquery.js": {
+            "name": "js/jquery.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {},
+    "classitems": [
+        {
+            "file": "js/AddDrinks.js",
+            "line": 1,
+            "description": "This method adds the day's total drink information\nto the week",
+            "itemtype": "method",
+            "name": "addToWeek",
+            "class": ""
+        },
+        {
+            "file": "js/DrawGraph.js",
+            "line": 1,
+            "description": "This method takes all of the information from the drinks array\nand uses it to draw the line graph",
+            "itemtype": "method",
+            "name": "drawGraph",
+            "class": ""
+        },
+        {
+            "file": "js/DrawGraph.js",
+            "line": 73,
+            "description": "Find out which day it belongs to and \nadd it to the total of that day",
+            "class": ""
+        },
+        {
+            "file": "js/FindInfo.js",
+            "line": 1,
+            "description": "This method takes some user information\nand uses it to calculate the BMI of the user",
+            "itemtype": "method",
+            "name": "findBMI",
+            "class": ""
+        },
+        {
+            "file": "js/FindInfo.js",
+            "line": 29,
+            "description": "This method takes recent drink information\nand uses it to approximate the user's blood alcohol content",
+            "itemtype": "method",
+            "name": "approxAlcohol",
+            "class": ""
+        },
+        {
+            "file": "js/jquery.dlmenu.js",
+            "line": 1,
+            "description": "jquery.dlmenu.js v1.0.1\nhttp://www.codrops.com\n\nLicensed under the MIT license.\nhttp://www.opensource.org/licenses/mit-license.php\n\nCopyright 2013, Codrops\nhttp://www.codrops.com",
+            "class": ""
+        },
+        {
+            "file": "js/jquery.js",
+            "line": 3837,
+            "description": "For feature detection",
+            "params": [
+                {
+                    "name": "fn",
+                    "description": "The function to test for native support",
+                    "type": "Function"
+                }
+            ],
+            "class": ""
+        },
+        {
+            "file": "js/jquery.js",
+            "line": 3845,
+            "description": "Create key-value caches of limited size",
+            "return": {
+                "description": "Returns the Object data after storing it on itself with\n\tproperty name the (space-suffixed) string and (if the cache is larger than Expr.cacheLength)\n\tdeleting the oldest entry",
+                "type": "Function(string, Object)"
+            },
+            "class": ""
+        },
+        {
+            "file": "js/jquery.js",
+            "line": 3865,
+            "description": "Mark a function for special use by Sizzle",
+            "params": [
+                {
+                    "name": "fn",
+                    "description": "The function to mark",
+                    "type": "Function"
+                }
+            ],
+            "class": ""
+        },
+        {
+            "file": "js/jquery.js",
+            "line": 3874,
+            "description": "Support testing using an element",
+            "params": [
+                {
+                    "name": "fn",
+                    "description": "Passed the created div and expects a boolean result",
+                    "type": "Function"
+                }
+            ],
+            "class": ""
+        },
+        {
+            "file": "js/jquery.js",
+            "line": 4001,
+            "description": "Detect xml",
+            "params": [
+                {
+                    "name": "elem",
+                    "description": "An element or a document",
+                    "type": "Element|Object"
+                }
+            ],
+            "class": ""
+        },
+        {
+            "file": "js/jquery.js",
+            "line": 4012,
+            "description": "Sets document-related variables once based on the current document",
+            "params": [
+                {
+                    "name": "doc",
+                    "description": "An element or document object to use to set the document",
+                    "type": "Element|Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Returns the current document",
+                "type": "Object"
+            },
+            "class": ""
+        },
+        {
+            "file": "js/jquery.js",
+            "line": 4505,
+            "description": "Utility function for retrieving the text value of an array of DOM nodes",
+            "params": [
+                {
+                    "name": "elem",
+                    "description": "",
+                    "type": "Array|Element"
+                }
+            ],
+            "class": ""
+        }
+    ],
+    "warnings": [
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " js/jquery.js:3845"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " js/jquery.js:4012"
+        },
+        {
+            "message": "Missing item type\nFind out which day it belongs to and \nadd it to the total of that day",
+            "line": " js/DrawGraph.js:73"
+        },
+        {
+            "message": "Missing item type\njquery.dlmenu.js v1.0.1\nhttp://www.codrops.com\n\nLicensed under the MIT license.\nhttp://www.opensource.org/licenses/mit-license.php\n\nCopyright 2013, Codrops\nhttp://www.codrops.com",
+            "line": " js/jquery.dlmenu.js:1"
+        },
+        {
+            "message": "Missing item type\nFor feature detection",
+            "line": " js/jquery.js:3837"
+        },
+        {
+            "message": "Missing item type\nCreate key-value caches of limited size",
+            "line": " js/jquery.js:3845"
+        },
+        {
+            "message": "Missing item type\nMark a function for special use by Sizzle",
+            "line": " js/jquery.js:3865"
+        },
+        {
+            "message": "Missing item type\nSupport testing using an element",
+            "line": " js/jquery.js:3874"
+        },
+        {
+            "message": "Missing item type\nDetect xml",
+            "line": " js/jquery.js:4001"
+        },
+        {
+            "message": "Missing item type\nSets document-related variables once based on the current document",
+            "line": " js/jquery.js:4012"
+        },
+        {
+            "message": "Missing item type\nUtility function for retrieving the text value of an array of DOM nodes",
+            "line": " js/jquery.js:4505"
+        }
+    ]
+}
