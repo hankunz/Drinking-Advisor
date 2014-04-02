@@ -75,11 +75,11 @@
 	  <div class="main">  
 	    <div class="wrap">  		 
 	  
-	  		<!-- show user profile -->
+	  		<!-- show user History -->
             <div class="column_middle">
 
 		         <div class="weather">
-		               <h3><i><img src=" images/user.png" alt="" /> </i>Profile</h3>
+		               <h3><i><img src=" images/events.png" alt="" /> </i>History</h3>
 					   <?php require 'php/drinkDataExport.php'; ?>
 					   
 					   
@@ -87,16 +87,19 @@
 
 						<div class="temp_list">
 				      			<ul>		  		    									
-									<li><a href="#"><span class="day_name"></span>
-									<script>document.write("Drink&nbsp&nbspVolume&nbsp&nbspCalories&nbsp&nbspSugar&nbsp&nbspAlcohol<br/>");
+									<li  ><a href="#" ><span class="day_name"></span>
+									<div style="width:400px;margin:auto;font-size:17px;color:white;">
+									<script>document.write("<pre>Drink&#9;    Volume&#9;Calories&#9;  Sugar    Alcohol<br/>");
 									for(var i = 0; i<userDrinksArray.length; i++)
 									{
-									document.write(userDrinksArray[i].name+ "&nbsp&nbsp" + userDrinksArray[i].volume+ "&nbsp&nbsp" + userDrinksArray[i].calories+
-									"&nbsp&nbsp"+ userDrinksArray[i].sugar+ "&nbsp&nbsp" +userDrinksArray[i].alcohol + "<br/>");
+									document.write(userDrinksArray[i].name+ "&#9;&#9;" + userDrinksArray[i].volume+ "&#9;&#9;&#9;" + userDrinksArray[i].calories+
+									"&#9;&#9;&#9;"+ userDrinksArray[i].sugar+ "&#9;&#9;&#9;" +userDrinksArray[i].alcohol + "<br/>");
 									
 									}
+									document.write("</pre>");
 									
 									</script>
+									</div>
 									<i></i></label><div class="clear"></div></a></li>
 			
 				    		</ul>											

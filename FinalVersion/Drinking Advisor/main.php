@@ -28,6 +28,8 @@ users' daily drinking status.	-->
 <script type="text/javascript" src=" js/Chart.js"></script>
  <script type="text/javascript" src=" js/jquery.easing.js"></script>
  <script type="text/javascript" src=" js/jquery.ulslide.js"></script>
+ <script src="js/legend.js"></script>
+<script src="js/demo.js"></script>
   <link type="text/css" href=" css/mmenu.css" rel="stylesheet" media="all" />
 <script type="text/javascript" src=" js/jquery.mmenu.min.js"></script>
 <script type="text/javascript">
@@ -93,23 +95,16 @@ users' daily drinking status.	-->
 	
 	    <div class="wrap">  		 
 	
-			<div class="chart">
+			<div id="lineChart" class="chart">
 					<!--line chart implementation -->
 					
 		              <h3>Drinking Status</h3>
 		                 <div class="diagram">
-		                 <canvas id="canvas" height="screen.availHeight/2" width="screen.availWidth/2"></canvas>
+		                 <canvas id="canvas" height="400px" width="600px;"></canvas>
+						 <div id="lineLegend"></div>
 
 
-<script>
-	drawGraph();
-	</script>
 	<br>
-	
-	<font size="6" color="rgb(0,0,0)">  Sugar Consumption  </font> <br>
-	<font size="6" color="rgb(8,163,0)"> Alcohol Consumption   </font>
-	<br>
-	<font size="6" color="orange"> Vitamin C   </font>
 	
 	<?php require 'php/drinkDataExport.php'; ?>
 	
@@ -155,7 +150,7 @@ users' daily drinking status.	-->
 					 	    </span>-->
 						
 							<span>
-							<i style="position:relative; left:-22%"><img src=" images/likes.png" alt="" /></i>
+							<i style="margin-left:-85px"><img src=" images/likes.png" alt="" /></i>
 							<select  id = "selectMenu" name ='SelectDrink' onchange="s_click(this)">
 							<option>Select the type of the drink</option>	
 							<?php echo $options ?>
@@ -215,16 +210,16 @@ users' daily drinking status.	-->
 					 	     <input name="drinkVitaminc" type="text" value="Enter the drink's Vitamin c. E.g. 3" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter the drink\'s Vitamin c. E.g. 3';}">
 					 	    </span>
 							</div>
-							
-					 	  
-					 	    <input class="iterateEffects" type="submit" value="Add!" >
+							    	
+					 	   <input id = "addButton" class="iterateEffects" type="submit" value="Add!" >
+					 	   
 					 	    </form>
 
 				   </div>
-				 
+				
 
              </div>
-    	
+
  	 </div>
 	  </div>
   	<div class="addDrink">

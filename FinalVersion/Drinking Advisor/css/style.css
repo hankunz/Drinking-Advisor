@@ -267,7 +267,9 @@ fieldset#body {
 	-moz-border-radius: 5px;
 	-o-border-radius: 5px;
 	text-align:center;
+	color:white;
 }
+
 .chart h3{
 	color: #FFF;
 	font-size: 1.2em;
@@ -820,33 +822,35 @@ fieldset#body {
 }
 #selectMenu
 {
-	left:19%;
+	
 	padding:8px;
     color:#FFF;
     font-size:1em;
 	background:#50597b;
     outline:none;
     border:none;
-    margin:0px auto;
-	margin-left:16px;
-    width:30%;  
+
     -webkit-apperance:none;
     font-family: 'ambleregular';
-	position:relative;
+
    
 }
 
 .column_right_grid input[type="text"],.column_right_grid input[type="password"]{
+	
 	padding:8px;
     color:#FFF;
     font-size:1em;
     background:none;   
     outline:none;
     border:none;
-    margin:0px auto;
-    width:75%;  
+	left:0;
+    margin-left:0;
+	top:0;	 
+	width:320px;
     -webkit-apperance:none;
     font-family: 'ambleregular';
+	
 }
 .addDrink input,.sign_in input{
 	padding:15px 2.5em;
@@ -857,8 +861,9 @@ fieldset#body {
 	border:none;
 	outline:none;
     background:#11a8ab;      
-	
-	left:42%;
+	left:50%;
+	 margin-left:-60px;   
+
 	top:10px;
 	position:relative;
 	border-radius:5px;
@@ -869,6 +874,28 @@ fieldset#body {
 	-webkit-appearance:none;
 	font-family: 'ambleregular';
 	
+}
+#addButton{
+	padding:15px 2.5em;
+	color:#FFF;
+	font-size:1em;
+	left:0;
+	cursor:pointer;
+	border:none;
+	outline:none;
+    background:#e64c65;     
+	margin-left:0px;   
+	
+	
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	-o-border-radius:5px;
+	
+	-webkit-appearance:none;
+	font-family: 'ambleregular';
+
+
 }
 .addDrink input[type="button"]:hover{
         background: #0D9092;
@@ -1051,4 +1078,32 @@ margin-top:10px;
 padding-left:-20px;
 width:40px; 
 height:40px;
+}
+
+#lineLegend{
+position:relative;
+margin:auto;
+
+
+}
+
+#fork {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0;
+}
+
+.legend {
+   
+	font-size:15px;
+    
+}
+
+.legend .title {
+    display: inline;
+    margin: 1.5em;
+    border-style: solid;
+    border-width: 0 0 0 1.1em;
+    padding: 0 0.3em;
 }

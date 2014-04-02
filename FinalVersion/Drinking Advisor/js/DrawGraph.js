@@ -1,3 +1,6 @@
+if(!!(window.addEventListener)) window.addEventListener('DOMContentLoaded', drawGraph);
+else window.attachEvent('onload', drawGraph);
+
 /**
 * This method takes all of the information from the drinks array
 * and uses it to draw the line graph
@@ -35,21 +38,26 @@ function drawGraph()
 			strokeColor : "rgba(220,220,220,1)",
 			pointColor : "rgba(220,220,220,1)",
 			pointStrokeColor : "#fff",
-			data : [daysSugar[0],daysSugar[1],daysSugar[2],daysSugar[3],daysSugar[4],daysSugar[5],daysSugar[6]]
+			data : [daysSugar[0],daysSugar[1],daysSugar[2],daysSugar[3],daysSugar[4],daysSugar[5],daysSugar[6]],
+			title : 'Sugar'
 		},
 		{
 			fillColor : "rgba(8,163,0,0.5)",
 			strokeColor : "rgba(151,187,205,1)",
 			pointColor : "rgba(151,187,205,1)",
 			pointStrokeColor : "#fff",
-			data : [daysAlcohol[0],daysAlcohol[1],daysAlcohol[2],daysAlcohol[3],daysAlcohol[4],daysAlcohol[5],daysAlcohol[6]]
+			data : [daysAlcohol[0],daysAlcohol[1],daysAlcohol[2],daysAlcohol[3],daysAlcohol[4],daysAlcohol[5],daysAlcohol[6]],
+		
+			title : 'Alcohol'
 		},
 		{
 			fillColor : "rgba(100,3,200,0.5)",
 			strokeColor : "rgba(151,187,205,1)",
 			pointColor : "rgba(151,187,205,1)",
 			pointStrokeColor : "#fff",
-			data : [daysVitaminC[0],daysVitaminC[1],daysVitaminC[2],daysVitaminC[3],daysVitaminC[4],daysVitaminC[5],daysVitaminC[6]]
+			data : [daysVitaminC[0],daysVitaminC[1],daysVitaminC[2],daysVitaminC[3],daysVitaminC[4],daysVitaminC[5],daysVitaminC[6]],
+		
+			title : 'Vatamin C'
 		}
 		]
 				
@@ -57,7 +65,7 @@ function drawGraph()
 
 	//Draw the chart itself
 	var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Line(lineChartData,options);
-		
+	legend(document.getElementById("lineLegend"), lineChartData);
 	
 	}
 	else
@@ -153,13 +161,13 @@ function drawGraph()
 					
 					daysSugar[6] += parseInt(userDrinksArray[i].sugar);
 					daysAlcohol[6] += parseInt(userDrinksArray[i].alcohol);
-					daysVitaminC[6] += parseInt(userDrinksArray[i].vitaminc;
+					daysVitaminC[6] += parseInt(userDrinksArray[i].vitaminc);
 					break;
 				default:
 			}
 		}
 		
-		var labelNames = newArray("Sun","Mon","Tue","Wed","Thu","Fri","Sat","Sun","Mon", "Tue","Wed","Thu","Fri","Sat");
+		var labelNames = new Array("Mon","Tue","Wed","Thu","Fri","Sat","Sun","Mon", "Tue","Wed","Thu","Fri","Sat");
 
 		//Using the Chart.js library, creates the line chart
 		//Values graphed are the daily sugar and alcohol values
@@ -167,25 +175,32 @@ function drawGraph()
 			labels : [labelNames[today],labelNames[today+1],labelNames[today+2],labelNames[today+3],labelNames[today+4],labelNames[today+5],labelNames[today]+6],
 			datasets : [
 			{
-				fillColor : "rgba(192,40,10,0.5)",
-				strokeColor : "rgba(220,220,220,1)",
-				pointColor : "rgba(220,220,220,1)",
+				fillColor : "rgba(192,40,10,0)",
+				strokeColor : "#11A8AB",
+				pointColor : "#11A8AB",
 				pointStrokeColor : "#fff",
-				data : [daysSugar[today],daysSugar[today+1],daysSugar[today+2],daysSugar[today+3],daysSugar[today+4],daysSugar[today+5],daysSugar[today+6]]
+				data : [daysSugar[today],daysSugar[today+1],daysSugar[today+2],daysSugar[today+3],daysSugar[today+4],daysSugar[today+5],daysSugar[today+6]],
+					title : 'Sugar'
+		
 			},
 			{
-				fillColor : "rgba(8,163,0,0.5)",
-				strokeColor : "rgba(151,187,205,1)",
-				pointColor : "rgba(151,187,205,1)",
+				fillColor : "rgba(8,163,0,0)",
+				strokeColor : "#E64C65",
+				pointColor : "#E64C65",
 				pointStrokeColor : "#fff",
-				data : [daysAlcohol[today],daysAlcohol[today+1],daysAlcohol[today+2],daysAlcohol[today+3],daysAlcohol[today+4],daysAlcohol[today+5],daysAlcohol[today+6]]
+				data : [daysAlcohol[today],daysAlcohol[today+1],daysAlcohol[today+2],daysAlcohol[today+3],daysAlcohol[today+4],daysAlcohol[today+5],daysAlcohol[today+6]],
+				
+				title : 'Alcohol'
+			
 			},
 			{
-				fillColor : "rgba(100,3,200,0.5)",
-				strokeColor : "rgba(151,187,205,1)",
-				pointColor : "rgba(151,187,205,1)",
+				fillColor : "rgba(100,3,200,0)",
+				strokeColor : "#FCB150",
+				pointColor : "#FCB150",
 				pointStrokeColor : "#fff",
-				data : [daysVitaminC[today],daysVitaminC[today+1],daysVitaminC[today+2],daysVitaminC[today+3],daysVitaminC[today+4],daysVitaminC[today+5],daysVitaminC[today+6]]
+				data : [daysVitaminC[today],daysVitaminC[today+1],daysVitaminC[today+2],daysVitaminC[today+3],daysVitaminC[today+4],daysVitaminC[today+5],daysVitaminC[today+6]],
+		
+				title : 'Vatamin C'
 		}
 			]
 					
@@ -193,5 +208,6 @@ function drawGraph()
 
 		//Draw the chart itself
 		var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Line(lineChartData);
+		legend(document.getElementById("lineLegend"), lineChartData);
 }
 }

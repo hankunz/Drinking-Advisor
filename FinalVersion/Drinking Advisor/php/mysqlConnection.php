@@ -4,8 +4,8 @@
   		date_default_timezone_set('America/Halifax');
   		
   		
-		$username="admin";
-		$password="admin";
+		$username="root";
+		$password="root";
 		$dbname="CSCI3130-Pro";
 		$host="localhost";
 		
