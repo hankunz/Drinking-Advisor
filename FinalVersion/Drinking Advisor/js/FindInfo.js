@@ -74,19 +74,30 @@ function approxAlcohol()
 				var timeAddHr = parseInt(timeAdded.slice(0,timeAdded.length - 9));
 				var timeAddMin = parseInt(timeAdded.slice(timeAdded.length - 8,timeAdded.length - 6));
 				//AM or PM of when drink was added
-				var timeAddTimed = timeAdded.slice(timeAdded.length - 12,timeAdded.length);
+				var timeAddTimed = timeAdded.slice(timeAdded.length - 13,timeAdded.length);
 				
 				//Current hour and minutes
 				var timeHr = parseInt(localTime.slice(0,localTime.length - 9));
 				var timeMin = parseInt(localTime.slice(localTime.length - 8,localTime.length - 6));
 				//Currently AM or PM
-				var timeTimed = localTime.slice(localTime.length - 12,localTime.length);
+				var timeTimed = localTime.slice(localTime.length - 13,localTime.length);
 			
 				
-				console.debug("Drink:"+ userDrinksArray[count].name);
-				console.debug("Hr Since:"+ (timeHr - timeAddHr));
-				console.debug("Min Since:"+ (timeMin - timeAddMin));
+					
+				//Adjust for a 24 hours cycle			
+				if(timeTimed == "PM" || timeTimed == " PM")
+					if(timeHr != 12)
+						timeHr += 12;
+				if(timeAddTimed == "pm" || timeAddTimed == " pm")
+					if(timeAddHr != 12)
+						timeAddHr += 12;
+					
 				
+				console.debug("time of drink" + timeAddTimed);
+				
+				console.debug("Drink:"+ userDrinksArray[count].name);
+				console.debug("Hr Since:"+ timeHr +" - "+ timeAddHr);
+				console.debug("Min Since:"+ (timeMin - timeAddMin));
 				
 				hoursSince = timeHr - timeAddHr;
 				
@@ -97,25 +108,29 @@ function approxAlcohol()
 				
 				console.debug("Hours Since:"+ hoursSince);
 				
-				
-				
-				if(gender == 'M')
-				{	
-					constant1 = 0.58;
-					constant2 = 0.015;
-				}
-				else
-				{	
-					constant1 = 0.49;
-					constant2 = 0.017;
-				}
-				
-								
-				console.debug("BAC: " + (((0.806 * ethanol * 1.2) / (constant1*weight)) - (constant2*hoursSince)));
+				if(hoursSince >=0)
+				{
 					
-				//BAC += ((ethanol/(weight * constant1))*(constant2*hoursSince));
-				BAC += ((0.806 * ethanol * 1.2) / (constant1*weight)) - (constant2*hoursSince*1.15);
-			
+					if(gender == 'M')
+					{	
+						constant1 = 0.58;
+						constant2 = 0.015;
+					}
+					else
+					{	
+						constant1 = 0.49;
+						constant2 = 0.017;
+					}
+					
+									
+					if((((0.806 * ethanol * 1.2) / (constant1*weight)) - (constant2*hoursSince)) >= 0)
+						BAC += ((0.806 * ethanol * 1.2) / (constant1*weight)) - (constant2*hoursSince);
+				
+					console.debug("BAC: " + (((0.806 * ethanol * 1.2) / (constant1*weight)) - (constant2*hoursSince)));
+						
+					//BAC += ((ethanol/(weight * constant1))*(constant2*hoursSince)*1.15);
+					
+				}
 			}
 
 				
@@ -124,6 +139,7 @@ function approxAlcohol()
 		
 	}	
 	
+	BAC = Math.round(BAC * 1000) / 1000
 	
 	return BAC;
 	

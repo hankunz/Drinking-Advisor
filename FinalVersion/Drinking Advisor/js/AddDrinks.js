@@ -5,21 +5,20 @@
 * @method addToWeek
 *
 */
-function ResetDay()
+function resetDay()
 {
-	
-	var today = new Date().getDay();
+	var localDay = new Date().toLocaleDateString().slice(2,3);
 	var count = 0;
 	
 	
 	for(count;count<userDrinksArray.length;count++)
 	{
-	
-		var dayOfDrink = new Date(userDrinksArray[count].dateAdded).getDay();
-		if (dayOfDrink == today+1 || dayOfDrink == today+6)
+		var dateAdded = userDrinksArray[count].dateAdded.slice(8,10);
+		
+		if(parseInt(localDay) ==  parseInt(dateAdded)+7)	
 		{	
-			userDrinksArray.splice(count, 1);
-		}			
+			userDrinksArray.splice(count, 1);	
+		}
 	}	
 	
 }

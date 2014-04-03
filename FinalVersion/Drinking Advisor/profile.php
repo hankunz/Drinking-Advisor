@@ -105,30 +105,29 @@
 									<li><a href="#"><span class="day_name">Approximate Current Blood Alcohol:</span>
 						  			<label class="digits">
 									
+									
+									
+									
+									
 									<script>
-									switch(approxAlcohol())
-									{
-									case <0.1:
-										</script>
-										<font color="green">
-										<script>
-										break;
-									case >0.1 && <0.2:
-										</script>
-										<font color="orange">
-										<script>
-										break;
-									case >0.2:
-										</script>
-										<font color="red">
-										<script>
-										break;			
+
+									var temp = approxAlcohol();
+									var result = temp.toString();
+									
+									if(temp < 0.1)
+										result = result.fontcolor("lawngreen");
+									if(temp > 0.1 && temp < 0.2)	
+										result = result.fontcolor("orange");									
+									if(temp > 0.2)	
+									{	
+										result = result + "  (DANGER)";
+										result = result.fontcolor("red");					
 									}
+									
+									document.write(result);
+									
 									</script>
 									
-									
-									
-									<script>document.write(approxAlcohol())</script>
 									</font>
 									<br>
 									<a href="#"><span class="day_name">Please note: Current BAC calculation does not account for food intake

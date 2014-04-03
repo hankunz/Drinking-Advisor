@@ -20,6 +20,8 @@ users' daily drinking status.	-->
 		<script src=" js/jquery.dlmenu.js"></script>
 		<script src=" js/pagetransitions.js"></script>
 		<script src=" js/DrawGraph.js"></script>
+		<script src=" js/AddDrinks.js"></script>
+		
 	  
  <script src=" js/AddDrinks.js"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href=" css/style.css" rel="stylesheet" type="text/css" media="all"/>
@@ -54,7 +56,8 @@ users' daily drinking status.	-->
 					  <div class="profile_details">
 				    		   <div id="loginContainer">
 				                  <a id="loginButton" class=""><span>Me</span></a>   
-				                    <div id="loginBox">                
+				                    <div id="loginBox">  
+									
 				                     
 				                     
 				                     
@@ -70,7 +73,9 @@ users' daily drinking status.	-->
 							        				  <li class="logout"><a href="index.php"> Logout</a></li> 
 							        		       <!-- <input name="hoho" type="submit" class="logout"  value="hoho"> -->
    				
-							        				
+							        				<script>
+													resetDay();
+													</script>
 							        				
 							        				<div class="clear"></div>		
 							        			</ul>
@@ -182,7 +187,7 @@ users' daily drinking status.	-->
 					 	    
 					 	    <span id = "volume">
 					 	     <i><img src=" images/statistics.png" alt="" /></i>
-					 	     <input name="drinkVolume" type="text" value="Enter the volume (ml.). E.g. 355" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter the volume (ml.). E.g. 355';}">
+					 	     <input name="drinkVolume" type="text" value="Enter the volume (ml. -> 1 Oz = 29.6 ml). E.g. 355" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter the volume (ml.). E.g. 355';}">
 					 	    </span>
 							
 							
