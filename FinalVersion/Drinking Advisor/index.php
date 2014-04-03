@@ -49,7 +49,7 @@
 
 
 							<!-- forget password function is not functional yet -->
-							   <h4><a href="main.html">Forget Password?</a></h4>				   
+							   <h4><a href="forgot.php">Forget Password?</a></h4>				   
           		       </div>
 					   
 					   	<!-- The link to the registration page -->

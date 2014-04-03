@@ -56,13 +56,19 @@ function approxAlcohol()
 			ethanol = userDrinksArray[count].alcohol/10;
 			
 			var timeAdded = userDrinksArray[count].timeAdded;
+			var timeAdded = userDrinksArray[count].dateAdded;
 			
 			var timeAdd = parseInt(timeAdded.slice(0,timeAdded.length - 9) + timeAdded.slice(timeAdded.length - 8,timeAdded.length - 6));
+			var timeAddTimed = timeAdded.slice(timeAdded.length - 12,timeAdded.length);
+			
 			var time = parseInt(localTime.slice(0,localTime.length - 9) + localTime.slice(localTime.length - 8,localTime.length - 6));
+			var timeTimed = localTime.slice(localTime.length - 12,localTime.length);
+						
 			
 			hoursSince = time - timeAdd;
-			hoursSince = hoursSince/1000/60/60;  //milliseconds to hours
-				
+			hoursSince = hoursSince/60;  //milliseconds to hours
+			
+			
 			if(gender == 'M')
 			{	
 				constant1 = 0.58;
@@ -73,10 +79,11 @@ function approxAlcohol()
 				constant1 = 0.49;
 				constant2 = 0.017;
 			}
-			
+				
 			//BAC += ((ethanol/(weight * constant1))*(constant2*hoursSince));
 			BAC += (0.806 * ethanol * 1.2) / (constant1*weight) - (constant2*hoursSince)
-		
+
+				
 		}		
 		
 		

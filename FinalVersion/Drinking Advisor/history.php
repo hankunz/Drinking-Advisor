@@ -89,12 +89,20 @@
 				      			<ul>		  		    									
 									<li  ><a href="#" ><span class="day_name"></span>
 									<div style="width:400px;margin:auto;font-size:17px;color:white;">
-									<script>document.write("<pre>Drink&#9;    Volume&#9;Calories&#9;  Sugar    Alcohol<br/>");
+									
+									<script>
+									
+									document.write("<pre>Drink&#9;    Volume&#9;Calories&#9;  Sugar    Alcohol&#9;    Day<br/>");
 									for(var i = 0; i<userDrinksArray.length; i++)
 									{
-									document.write(userDrinksArray[i].name+ "&#9;&#9;" + userDrinksArray[i].volume+ "&#9;&#9;&#9;" + userDrinksArray[i].calories+
-									"&#9;&#9;&#9;"+ userDrinksArray[i].sugar+ "&#9;&#9;&#9;" +userDrinksArray[i].alcohol + "<br/>");
+										if(userDrinksArray[i].name.length > 6)
+											drinkName = userDrinksArray[i].name.slice(0,5);
+										else
+											drinkName = userDrinksArray[i].name;
 									
+										document.write(drinkName+ "&#9;&#9;" + userDrinksArray[i].volume+ "&#9;&#9;&#9;" + userDrinksArray[i].calories+
+										"&#9;&#9;&#9;"+ userDrinksArray[i].sugar+ "&#9;&#9;&#9;" +userDrinksArray[i].alcohol +"&#9;" + userDrinksArray[i].dateAdded + "<br/>");
+										
 									}
 									document.write("</pre>");
 									

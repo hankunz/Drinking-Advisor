@@ -4,9 +4,9 @@
   		date_default_timezone_set('America/Halifax');
   		
   		
-		$username="root";
-		$password="root";
-		$dbname="CSCI3130-Pro";
+		$username="Chris";
+		$password="hockey";
+		$dbname="csci3130-pro";
 		$host="localhost";
 		
 		$con=mysqli_connect($host,$username,$password,$dbname);

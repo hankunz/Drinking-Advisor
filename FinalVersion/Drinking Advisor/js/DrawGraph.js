@@ -167,12 +167,12 @@ function drawGraph()
 			}
 		}
 		
-		var labelNames = new Array("Mon","Tue","Wed","Thu","Fri","Sat","Sun","Mon", "Tue","Wed","Thu","Fri","Sat");
-
+		var labelNames = new Array("Sun","Mon","Tue","Wed","Thu","Fri","Sat","Sun","Mon", "Tue","Wed","Thu","Fri","Sat","Sun");
+		
 		//Using the Chart.js library, creates the line chart
 		//Values graphed are the daily sugar and alcohol values
 		var lineChartData = {
-			labels : [labelNames[today],labelNames[today+1],labelNames[today+2],labelNames[today+3],labelNames[today+4],labelNames[today+5],labelNames[today]+6],
+			labels : [labelNames[today+1],labelNames[today+2],labelNames[today+3],labelNames[today+4],labelNames[today+5],labelNames[today+6],labelNames[today]],
 			datasets : [
 			{
 				fillColor : "rgba(192,40,10,0)",
