@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
   		$drinkCalories = preventScript($_POST["drinkCalories"]);
   		$drinkSugar = preventScript($_POST["drinkSugar"]);
   		$drinkAlcohol = preventScript($_POST["drinkAlcohol"]);
-		$drinkAlcohol = ($drinkVolume*$drinkAlcohol)/100; 
+		$drinkAlcohol = (($drinkVolume*$drinkAlcohol)*0.789)/1000; 
 		
   		$drinkVitaminc = preventScript($_POST["drinkVitaminc"]);
   		
@@ -185,6 +185,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
    				$getPreDefinedVitamincQueryResultVal=$row['Vitaminc'];   		 
    		 	 }
   		
+		
+		// adjusting the nutrual facts according to the entered volume
+  		$getPreDefinedSugarQueryResultVal=($getPreDefinedSugarQueryResultVal*$drinkVolume);
+  		$getPreDefinedCaloriesQueryResultVal=($getPreDefinedCaloriesQueryResultVal*$drinkVolume);
+  		$getPreDefinedAlcoholQueryResultVal=($getPreDefinedAlcoholQueryResultVal*$drinkVolume);
+  		$getPreDefinedVitamincQueryResultVal=($getPreDefinedVitamincQueryResultVal*$drinkVolume);
+	
+		
+		
   	
   		// storing the current time in a variable
   		$currentTime=date("g:i:s a");

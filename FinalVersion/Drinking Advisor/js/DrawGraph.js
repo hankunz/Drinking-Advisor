@@ -67,6 +67,7 @@ function drawGraph()
 	var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Line(lineChartData,options);
 	legend(document.getElementById("lineLegend"), lineChartData);
 	
+	
 	}
 	else
 	{
