@@ -59,7 +59,7 @@ if(isset($email)){
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<link href=" css/ForgotPassword.css" rel="stylesheet" type="text/css" media="all"/>
+<link href=" css/style.css" rel="stylesheet" type="text/css" media="all"/>
 <script type="text/javascript" src=" js/jquery.js"></script>
 <script type="text/javascript" src=" js/login.js"></script>
 <script type="text/javascript" src=" js/Chart.js"></script>
@@ -88,7 +88,7 @@ if(isset($email)){
 								<i><img src=" images/mail.png" alt="" /></i><input name="email" type="text" value="Enter your email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your email';}">
 								</span>
 								
-								<input type="submit" class="my-button"  value="submit">
+								<input type="submit" id="addButton" class="my-button"  value="submit">
 							</form>
 
 

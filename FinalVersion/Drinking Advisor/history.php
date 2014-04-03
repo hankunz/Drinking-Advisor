@@ -92,7 +92,7 @@
 									
 									<script>
 									
-									document.write("<pre>Drink&#9;    Volume&#9;Calories&#9;  Sugar    Alcohol&#9;    Day<br/>");
+									document.write("<pre>Drink&#9;Calories&#9;Sugar&#9;Alcohol&#9;Day<br/>");
 									for(var i = 0; i<userDrinksArray.length; i++)
 									{
 										if(userDrinksArray[i].name.length > 6)
@@ -100,8 +100,8 @@
 										else
 											drinkName = userDrinksArray[i].name;
 									
-										document.write(drinkName+ "&#9;&#9;" + userDrinksArray[i].volume+ "&#9;&#9;&#9;" + userDrinksArray[i].calories+
-										"&#9;&#9;&#9;"+ userDrinksArray[i].sugar+ "&#9;&#9;&#9;" +userDrinksArray[i].alcohol +"&#9;" + userDrinksArray[i].dateAdded + "<br/>");
+										document.write(drinkName+ "&#9;&#9;" + userDrinksArray[i].calories+
+										"&#9;&#9;&#9;"+ userDrinksArray[i].sugar+ "&#9;&#9;" +userDrinksArray[i].alcohol +"&#9;" + userDrinksArray[i].dateAdded + "<br/>");
 										
 									}
 									document.write("</pre>");
