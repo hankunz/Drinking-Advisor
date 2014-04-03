@@ -27,8 +27,13 @@
 	       <div class="column_left">	
 
 				<div class="column_right">
-            	
-					<div class="column_right_grid sign-in">
+            	 <div class="column_middle">
+					  <div class="weather">
+		               <h3><i><img src=" images/logo.png" alt="" /> </i>Drinking Advisor</h3>
+					   </div>
+					    </div>
+					<div class="column_right_grid sign-in" style = "margin-top:-15px">
+					
 						<div class="sign_in">
 						   <h3>Sign in to your account</h3>
 							

@@ -150,7 +150,7 @@
 							<ul>
 								<li><a href="main.php"><i><img src=" images/invites.png"></i>Home</a></li>
 								<li><a href="profile.php"><span><i><img src=" images/user.png"></i>Profile</span></a></li> 
-						  		<li><a href="goal.php"><span><i><img src=" images/statistics.png"></i>Goals</span></a></li>		
+						  			
 								<li><a href="history.php"><i><img src=" images/statistics.png" alt="" /></i>History</a></li>
 																								
 							</ul>
