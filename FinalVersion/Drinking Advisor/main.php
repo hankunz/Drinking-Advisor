@@ -105,7 +105,7 @@ users' daily drinking status.	-->
 					
 		              <h3>Drinking Status</h3>
 		                 <div class="diagram">
-		                 <canvas id="canvas" height="400px" width="600px;"></canvas>
+		                 <canvas id="canvas" height="270px" width="330px;"></canvas>
 						 <div id="lineLegend"></div>
 
 
@@ -155,7 +155,7 @@ users' daily drinking status.	-->
 					 	    </span>-->
 						
 							<span>
-							<i style="margin-left:-85px"><img src=" images/likes.png" alt="" /></i>
+							<i style="margin-left:0px"><img src=" images/likes.png" alt="" /></i>
 							<select  id = "selectMenu" name ='SelectDrink' onchange="s_click(this)">
 							<option>Select the type of the drink</option>	
 							<?php echo $options ?>
@@ -186,33 +186,33 @@ users' daily drinking status.	-->
 							</script>
 					 	    
 					 	    <span id = "volume">
-					 	     <i><img src=" images/statistics.png" alt="" /></i>
-					 	     <input name="drinkVolume" type="text" value="Enter the volume (ml. -> 1 Oz = 29.6 ml). E.g. 355" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter the volume (ml.). E.g. 355';}">
+					 	   
+					 	     <input name="drinkVolume" type="text" value="Enter the volume (ml. -> 1 Oz = 29.6 ml)." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter the volume (ml. -> 1 Oz = 29.6 ml).';}">
 					 	    </span>
 							
 							
 							
 							<div id="fileds" style="display:none"  >
 									<span>
-					 	    <i><img src=" images/likes.png" alt="" /></i>
-					 	    <input name="drinkName" type="text" value="Enter the name of the drink. E.g. Orange Juice" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter the name of the drink. E.g. Orange Juice';}">
+					 	   
+					 	    <input name="drinkName" type="text" value="Enter the name of the drink." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter the name of the drink.';}">
 					 	    </span>			    	
 							
 							 <span>
-					 	     <i><img src=" images/statistics.png" alt="" /></i>
-					 	     <input name="drinkCalories" type="text" value="Enter the drink's calories. E.g. 50" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter the drink\'s calories. E.g. 50';}">
+					 	     
+					 	     <input name="drinkCalories" type="text" value="Enter the drink's calories" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter the drink\'s calories.';}">
 					 	    </span>
 					 	     <span>
-					 	     <i><img src=" images/statistics.png" alt="" /></i>
-					 	     <input name="drinkSugar" type="text" value="Enter the drink's sugar. E.g. 20" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter the drink\'s sugar. E.g. 20';}">
+					 	    
+					 	     <input name="drinkSugar" type="text" value="Enter the drink's sugar." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter the drink\'s sugar.';}">
 					 	    </span>
 					 	    <span>
-					 	     <i><img src=" images/statistics.png" alt="" /></i>
-					 	     <input name="drinkAlcohol" type="text" value="Enter the drink's alcohol percentage. E.g. 5" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter the drink\'s alcohol percentage. E.g. 5';}">
+					 	     
+					 	     <input name="drinkAlcohol" type="text" value="Enter the drink's alcohol percentage." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter the drink\'s alcohol percentage.';}">
 					 	    </span>
 					 	    <span>
-					 	     <i><img src=" images/statistics.png" alt="" /></i>
-					 	     <input name="drinkVitaminc" type="text" value="Enter the drink's Vitamin c. E.g. 3" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter the drink\'s Vitamin c. E.g. 3';}">
+					 	     
+					 	     <input name="drinkVitaminc" type="text" value="Enter the drink's Vitamin c." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter the drink\'s Vitamin c.';}">
 					 	    </span>
 							</div>
 							    	
