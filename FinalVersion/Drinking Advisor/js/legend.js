@@ -1,3 +1,14 @@
+/*
+* The method takes a line graph data and add a lengend to it
+* with the same colour of stroke.
+*
+*@parent the paramater that holds the legend data
+*@data the paramater that holds the line graph data
+*
+*/
+
+
+
 function legend(parent, data) {
     parent.className = 'legend';
     var datas = data.hasOwnProperty('datasets') ? data.datasets : data;
